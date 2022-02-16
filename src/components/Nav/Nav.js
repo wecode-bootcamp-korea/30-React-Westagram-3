@@ -4,25 +4,27 @@ import './Nav.scss';
 
 function Nav(props) {
   return (
-    <nav className="navigationMain">
-      <div className="navBox">
-        <div className="instagramIcon">
-          <i className="fab fa-instagram"></i>
-          <h1 className="instagramFont">Westagram</h1>
+    <>
+      <nav className="navigationMain">
+        <div className="navBox">
+          <div className="instagramIcon">
+            <i className="fab fa-instagram"></i>
+            <h1 className="instagramFont">Westagram</h1>
+          </div>
+          <div className="searchBox">
+            <input type="text" name="seach" className="search" />
+            <span className="searchPlaceholder">
+              <i className="fas fa-search"></i> 검색
+            </span>
+          </div>
+          <div className="navIcons">
+            <NavImgLink name="explore" />
+            <NavImgLink name="heart" />
+            <NavImgLink name="profile" />
+          </div>
         </div>
-        <div className="searchBox">
-          <input type="text" name="seach" className="search" />
-          <span className="searchPlaceholder">
-            <i className="fas fa-search"></i> 검색
-          </span>
-        </div>
-        <div className="navIcons">
-          <NavImgLink name="explore" />
-          <NavImgLink name="heart" />
-          <NavImgLink name="profile" />
-        </div>
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 }
 
