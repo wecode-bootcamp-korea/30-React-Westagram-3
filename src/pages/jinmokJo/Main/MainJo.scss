@@ -1,0 +1,463 @@
+/* (../../Assets/images) */
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixin.scss';
+
+$themeBorder: 1px solid #dbdbdb;
+
+$outLineColor: #8e8e8e;
+
+#whole {
+  height: 100vh;
+  background-color: #fafafa;
+
+  .navigationMain {
+    @include flexBox(start, center);
+    position: fixed;
+    z-index: 1;
+    border-bottom: 1.5px solid #bdbfc1;
+    width: 100%;
+    height: $navBoxHeight;
+    background-color: white;
+    font-family: $defaultFont;
+
+    .navBox {
+      @extend %absoluteCenter;
+      @include flexBox(space-between, center);
+      height: $navBoxHeight;
+      width: calc($mainFeedWidth + $mainAsideWidth);
+
+      .instagramIcon {
+        @include flexBox(start, center);
+        font-size: 25px;
+
+        .instagramFont {
+          margin-left: 12px;
+          padding-left: 12px;
+          border-left: 1.5px solid black;
+        }
+      }
+
+      .searchBox {
+        @extend %absoluteCenter;
+
+        .search {
+          padding: 8px 15px;
+          width: 270px;
+          background-color: #fafafa;
+          border: 1px solid #bdbfc1;
+          border-radius: 3px;
+        }
+
+        .searchPlaceholder {
+          @extend %absoluteCenter;
+          color: #bdbfc1;
+          pointer-events: none;
+        }
+      }
+
+      .searchBox:focus-within .searchPlaceholder {
+        visibility: hidden;
+      }
+
+      .navIcons {
+        a img {
+          width: 25px;
+        }
+      }
+
+      .navIcons a:not(:first-child) {
+        margin-left: 16px;
+      }
+    }
+  }
+
+  .feeds {
+    position: absolute;
+    margin-top: 90px;
+    width: fit-content;
+    background-color: white;
+    left: 50%;
+    transform: translateX(
+      calc((($mainAsideWidth + $mainFeedWidth) / 2) * (-1))
+    );
+
+    .feedArticle {
+      width: 615px;
+      border: 1.5px solid #bdbfc1;
+    }
+  }
+
+  .articleHeader {
+    @include flexBox(space-between, center);
+    padding: 0 20px;
+    margin: 15px 0;
+  }
+
+  .profiles {
+    @include flexBox(start, center);
+  }
+
+  .profile-img {
+    @include flexBox(center, center);
+    color: white;
+    background-color: black;
+    border-radius: 50%;
+  }
+
+  .id_text {
+    @include flexBox(start, start, column);
+  }
+
+  .article-header-menu {
+    color: black;
+  }
+
+  .feeds_my_id .profile-img {
+    width: 40px;
+    height: 40px;
+    font-size: 3px;
+  }
+
+  .feeds_my_id .id_text {
+    margin-left: 10px;
+  }
+
+  .feeds_my_id .id_text span:first-child {
+    font-size: 15px;
+    margin-bottom: 3px;
+  }
+  .feeds_my_id .id_text span:last-child {
+    font-size: 12px;
+  }
+
+  .contents {
+    width: 100%;
+    padding-top: 100%;
+    border-top: 1.5px solid #efefef;
+    border-bottom: 1.5px solid #efefef;
+    background-image: url('https://images.unsplash.com/photo-1640622842523-4825918c4716?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80');
+    background-size: cover;
+    background-position: 0 center;
+  }
+
+  .article-bottom {
+    padding: 15px 15px;
+  }
+
+  .article-btns {
+    @include flexBox(space-between, center);
+    margin-bottom: 15px;
+  }
+
+  .article-btns div button:not(:last-child) {
+    margin-right: 15px;
+  }
+
+  .article-btns div button {
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .hover:hover {
+    opacity: 0.5;
+  }
+
+  @keyframes clickScaleUp {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .active {
+    animation: clickScaleUp 0.2s ease-in-out;
+  }
+
+  .like-section {
+    @include flexBox(start, center);
+    margin-bottom: 15px;
+    font-size: 15px;
+  }
+
+  .like-profile {
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-image: url('https://images.unsplash.com/photo-1644248423455-c692677828c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80');
+    background-size: cover;
+    background-position: 0 center;
+  }
+
+  .article-text {
+    line-height: 19px;
+    font-size: 14px;
+    margin-bottom: 7px;
+  }
+
+  .reply {
+    color: #909090;
+    margin-bottom: 7px;
+  }
+
+  .comment-box {
+    width: 100%;
+  }
+
+  .comment-text {
+    @include flexBox(space-between, baseline);
+    position: relative;
+    margin-bottom: 10px;
+  }
+
+  .id_comment {
+    @include flexBox(space-between, baseline);
+    flex-grow: 1;
+    font-size: 14px;
+  }
+
+  .id_comment div:first-child {
+    margin-right: 5px;
+  }
+
+  .comment {
+    align-self: start;
+    flex-grow: 1;
+    line-height: 17px;
+    word-break: break-all;
+  }
+
+  .commentHeart {
+    padding-left: 10px;
+    align-self: center;
+    cursor: pointer;
+  }
+
+  .deleteButton {
+    position: absolute;
+    left: -9px;
+    top: -1.5px;
+    color: #bdbfc1;
+    cursor: pointer;
+  }
+
+  .redHover:hover {
+    color: #ed4956;
+  }
+
+  .upload-time {
+    font-size: 12px;
+    color: #909090;
+  }
+
+  .comments {
+    border-top: 1.5px solid #efefef;
+    padding: 15px 15px;
+  }
+
+  #comments-form {
+    @include flexBox(space-between, center);
+    width: 100%;
+  }
+
+  .emoji {
+    margin-right: 15px;
+    padding: 0;
+    border: none;
+    background-color: unset;
+    cursor: pointer;
+  }
+
+  .emoji i {
+    font-size: 25px;
+  }
+
+  #comments-submit {
+    padding: 0;
+    width: max-content;
+    border: none;
+    color: #b3dffc;
+    background-color: unset;
+    font-size: 14px;
+  }
+
+  #comments-area {
+    padding: 0;
+    flex-grow: 1;
+    max-height: 72px;
+    height: 18px;
+    border: unset;
+    line-height: 18px;
+    outline: unset;
+    resize: none;
+    scroll-behavior: unset;
+    overflow: auto;
+  }
+
+  #story-recommand {
+    position: fixed;
+    width: 345px;
+    top: 90px;
+    left: 50%;
+    transform: translateX(calc(($mainFeedWidth - $mainAsideWidth) / 2));
+    font-family: $defaultFont;
+  }
+
+  .story-recommand-section {
+    padding-left: 30px;
+  }
+
+  .profiles-header {
+    @include flexBox(space-between);
+    padding: 20px 0;
+  }
+
+  .aside_my_id_profile .profile-img {
+    width: 50px;
+    height: 50px;
+    font-size: 10px;
+  }
+
+  .aside_my_id_profile .id_text {
+    margin-left: 20px;
+  }
+
+  .aside_my_id_profile .id_text span:first-child {
+    font-size: 17px;
+    margin-bottom: 7px;
+  }
+  .aside_my_id_profile .id_text span:last-child {
+    color: #8e8e8e;
+    font-size: 15px;
+  }
+
+  #story {
+    margin-bottom: 15px;
+  }
+
+  .storys {
+    height: 180px;
+    overflow: scroll;
+  }
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .storys::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .storys {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .aside-header {
+    @include flexBox(space-between, center);
+    padding: 15px 0;
+  }
+
+  .aside-title {
+    color: #8e8e8e;
+    font-size: 16px;
+  }
+
+  .aside-btns {
+    padding: 0;
+    border: none;
+    background-color: unset;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .id-change {
+    color: #159af6;
+  }
+
+  .story-profiles .profile-img {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+  }
+
+  .profile-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .story-profiles .id_text {
+    margin-left: 13px;
+  }
+
+  .story-profiles .id_text span:first-child {
+    font-size: 17px;
+    margin-bottom: 5px;
+  }
+  .story-profiles .id_text span:last-child {
+    color: #8e8e8e;
+    font-size: 12px;
+  }
+
+  .storys .story-profiles:not(:first-child) {
+    margin-top: 15px;
+  }
+
+  #recommand-section {
+    margin-bottom: 40px;
+  }
+
+  .recommand-profiles .profile-img {
+    width: 35px;
+    height: 35px;
+    overflow: hidden;
+  }
+
+  .recommand-profiles .id_text {
+    margin-left: 13px;
+  }
+
+  .recommand-profiles .id_text span:first-child {
+    font-size: 17px;
+    margin-bottom: 5px;
+  }
+  .recommand-profiles .id_text span:last-child {
+    color: #8e8e8e;
+    font-size: 12px;
+  }
+
+  .recommands .recommand-profile-follow:not(:first-child) {
+    margin-top: 15px;
+  }
+
+  .recommand-profile-follow {
+    @include flexBox(space-between);
+  }
+
+  #aside_bottom {
+    color: #c8c8c8;
+    font-size: 12px;
+  }
+
+  #aside_bottom_nav {
+    margin-bottom: 25px;
+  }
+
+  #aside_bottom_nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 20px;
+  }
+
+  #aside_bottom_nav ul a {
+    color: #c8c8c8;
+  }
+
+  #aside_bottom_nav ul li:not(:last-child)::after {
+    content: '·';
+    padding: 0 3px;
+  }
+}
