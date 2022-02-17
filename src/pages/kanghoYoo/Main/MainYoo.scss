@@ -1,3 +1,6 @@
+@import './../../../styles/variables.scss';
+@import './../../../styles/mixin.scss';
+
 @mixin flex-column {
   display: flex;
   flex-direction: column;
@@ -15,22 +18,16 @@
 }
 
 .main {
-  @include flex-row;
-  justify-content: center;
-  align-items: flex-start;
-  margin-top: 50px;
-  padding-bottom: 50px;
-}
-
-.feeds {
-  margin: 5px 12px 0px 15px;
+  position: absolute;
+  top: 90px;
+  left: 50%;
+  transform: translateX(calc((($mainAsideWidth + $mainFeedWidth) / 2) * (-1)));
 }
 
 .article {
   @include flex-column;
   border: 1px solid gainsboro;
   border-radius: 4px;
-  margin: 50px 5px 5px 5px;
 }
 
 .articleTop {
@@ -68,8 +65,8 @@
 }
 
 .artImg {
-  width: 580px;
-  height: 760px;
+  width: $mainFeedWidth;
+  height: 650px;
   object-fit: cover;
 }
 
@@ -194,9 +191,12 @@
 }
 
 .mainRight {
-  margin-left: 10px;
-  padding-top: 50px;
-  width: 250px;
+  position: fixed;
+  top: 90px;
+  left: 50%;
+  padding: 0px 0px 0px 20px;
+  width: $mainAsideWidth;
+  transform: translateX(calc(($mainFeedWidth - $mainAsideWidth) / 2));
 }
 
 .right1 {
@@ -269,6 +269,7 @@
 }
 
 .right3 {
+  @include flex-column;
   border: 1px solid gainsboro;
   border-radius: 4px;
   background-color: white;
