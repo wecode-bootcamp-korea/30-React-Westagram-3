@@ -49,7 +49,7 @@ body {
 
           button {
             all: unset;
-            font-size: 12px;
+            font-size: 14px;
             color: #c5e1fb;
           }
         }
@@ -107,7 +107,8 @@ body {
 
           p {
             margin: 0;
-            font-size: 12px;
+            font-size: 14px;
+            line-height: normal;
           }
 
           .smallHeart {
@@ -123,6 +124,10 @@ body {
 
     .grayText {
       color: #b5b5b5;
+    }
+
+    .boldText {
+      font-weight: bold;
     }
 
     .rightBar {

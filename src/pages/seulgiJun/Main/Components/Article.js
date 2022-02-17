@@ -46,14 +46,16 @@ function Article() {
             src="/images/seulgiJun/햇님.jpeg"
           />
           <p>
-            <strong>hae_nim</strong>님 <strong>외 10명</strong>이 좋아합니다
+            <span class="boldText">hae_nim</span>님{' '}
+            <span class="boldText">외 10명</span>이 좋아합니다
           </p>
         </div>
       </div>
 
       <div className="feedColumn feedColumnSmall">
         <p>
-          <strong>hae_dal_byeol</strong> 별님이는 아래에서 찍어도 귀여워...
+          <span class="boldText">hae_dal_byeol</span> 별님이는 아래에서 찍어도
+          귀여워...
           <span className="grayText">더 보기</span>
         </p>
       </div>
@@ -61,7 +63,7 @@ function Article() {
       <div className="feedColumn feedColumnSmall">
         <div className="feedColumnRow comments">
           <p>
-            <strong>dal_nim</strong> 달님이가 더 귀여워^~^
+            <span class="boldText">dal_nim</span> 달님이가 더 귀여워^~^
           </p>
         </div>
         <div className="feedColumnRow">
