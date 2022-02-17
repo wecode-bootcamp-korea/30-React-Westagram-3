@@ -163,7 +163,7 @@ function MainYoo() {
                 </div>
                 <div className="anotherInfo">
                   <p>cho_ha</p>
-                  <span className="times">1시간 전</span>
+                  <span className="times">3시간 전</span>
                 </div>
               </div>
             </div>
