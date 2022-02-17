@@ -10,8 +10,12 @@ function MainJun() {
   return (
     <div className="mainStyle">
       <Nav />
-      <main className="feedMain">
-        <Article />
+      <main className="mainMain">
+        <div className="feedContainer">
+          <Article />
+          <Article />
+          <Article />
+        </div>
         <RightBar />
       </main>
     </div>
