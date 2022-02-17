@@ -12,7 +12,7 @@ function Nav(props) {
             <h1 className="instagramFont">Westagram</h1>
           </div>
           <div className="searchBox">
-            <input type="text" name="seach" className="search" />
+            <input type="text" name="search" className="search" />
             <span className="searchPlaceholder">
               <i className="fas fa-search"></i> 검색
             </span>
