@@ -163,7 +163,7 @@ function MainYoo() {
                 </div>
                 <div className="anotherInfo">
                   <p>cho_ha</p>
-                  <span className="times">3시간 전</span>
+                  <span className="times">2시간 전</span>
                 </div>
               </div>
             </div>
@@ -185,7 +185,7 @@ function MainYoo() {
                 <div className="anotherRecomment">
                   <p>de_lo</p>
                   <span className="flowing">
-                    _blosanrang님 외 25명이 팔로잉 중
+                    _blosanrang님 외 22명이 팔로잉 중
                   </span>
                 </div>
                 <a href="#">팔로우</a>
