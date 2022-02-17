@@ -1,0 +1,88 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixin.scss';
+
+$themeBorder: 1px solid #dbdbdb;
+
+$outLineColor: #8e8e8e;
+
+.Login {
+  @extend %absoluteCenter;
+  @include flexBox(space-between, center, column);
+  width: 350px;
+  height: 380px;
+  padding: 30px 40px 25px 40px;
+  border: $themeBorder;
+
+  .loginMain {
+    @include flexBox(start, center, column);
+    width: 100%;
+
+    .title {
+      margin-bottom: 50px;
+      font-size: 40px;
+    }
+
+    #loginForm {
+      width: 100%;
+    }
+
+    .loginInput {
+      @include flexBox(center, start, column);
+      position: relative;
+      height: 40px;
+      margin-bottom: 10px;
+      padding: 0 10px;
+      background-color: #fafafa;
+      border: $themeBorder;
+      border-radius: 3px;
+
+      .inputPlaceholder {
+        position: absolute;
+        color: $outLineColor;
+        font-size: 12px;
+        transition: all 0.1s ease-out;
+      }
+
+      input {
+        position: absolute;
+        width: 246px;
+        padding: 0;
+        outline: unset;
+        border: none;
+        background-color: unset;
+        font-size: 12px;
+
+        .visiblePassword {
+          align-self: flex-end;
+          width: fit-content;
+          height: 100%;
+          border: none;
+          background-color: unset;
+          font-size: 14px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .loginInput:focus-within {
+      outline: 1px solid $outLineColor;
+    }
+
+    .loginBtn {
+      width: 100%;
+      margin-top: 5px;
+      height: 30px;
+      border: unset;
+      border-radius: 5px;
+      background-color: #c5e0fc;
+      color: white;
+      font-weight: 600;
+      font-size: 14px;
+    }
+  }
+
+  .find-password {
+    color: #00366b;
+    font-size: 12px;
+  }
+}
