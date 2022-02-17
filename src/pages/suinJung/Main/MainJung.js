@@ -63,18 +63,19 @@ function MainJung() {
                 </div>
               </div>
               <p className="aftertime">42분 전</p>
-              <div className="commentplace">
-                <input
-                  id="comment"
-                  type="text"
-                  name="댓글"
-                  placeholder="댓글 달기..."
-                />
-                <button className="gocomment">게시</button>
-              </div>
+            </div>
+            <div className="commentplace">
+              <input
+                id="comment"
+                type="text"
+                name="댓글"
+                placeholder="댓글 달기..."
+              />
+              <button className="gocomment">게시</button>
             </div>
           </article>
-
+        </main>
+        <div className="right">
           <div className="main-right">
             <div className="myproflie">
               <div className="myimage">
@@ -175,7 +176,7 @@ function MainJung() {
               <p>&copy; 2019 INSTAGRAM</p>
             </div>
           </div>
-        </main>
+        </div>
       </div>
     </>
   );
