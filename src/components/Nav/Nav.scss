@@ -4,8 +4,9 @@
 .navigationMain {
   @include flexBox(start, center);
   position: fixed;
+  top: 0;
   z-index: 1;
-  border-bottom: 1.5px solid #bdbfc1;
+  border-bottom: $themeBorder;
   width: 100%;
   height: $navBoxHeight;
   background-color: white;
