@@ -1,9 +1,14 @@
 import React from 'react';
 import './LoginYoo.scss';
 import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
 import Nav from '../../../components/Nav/Nav';
 function LoginYoo() {
+  // function handleSubmit(e) {
+  //   const
+  // }
+
   const navigate = useNavigate();
   const goToMain = () => {
     navigate('/main');
@@ -16,6 +21,7 @@ function LoginYoo() {
         <span className="lobsterFont">Westagram</span>
         <div className="inputWrap">
           <input
+            onChange={handleldInput}
             type="text"
             className="id input"
             placeholder="전화번호, 사용자 이름 또는 이메일"
