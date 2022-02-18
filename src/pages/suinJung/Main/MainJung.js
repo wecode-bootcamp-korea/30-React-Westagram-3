@@ -11,13 +11,14 @@ function MainJung() {
           <article>
             <div className="feed-nav">
               <div className="user">
-                <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80\\" />
+                <img
+                  alt="more"
+                  src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80\\"
+                />
                 <h3>canon_mj</h3>
               </div>
               <div className="more">
-                <span>
-                  <img src="../../images/more.png" />
-                </span>
+                <img src="../../images/suinJung/more.png" />
               </div>
             </div>
             <div className="feed-image">
@@ -30,11 +31,11 @@ function MainJung() {
                   <i className="fas fa-heart"></i>
                   <i className="fas fa-heart"></i>
                 </div>
-                <img src="../../images/bookmark.png" />
+                <img src="../../images/suinJung/bookmark.png" />
               </div>
               <div className="feedlike">
                 <div className="likeimage">
-                  <img src="../../images/face.png" />
+                  <img src="../../images/suinJung/face.png" />
                 </div>
                 <p>
                   <span>aineworld</span>님 <span>외 10명</span>이 좋아합니다.

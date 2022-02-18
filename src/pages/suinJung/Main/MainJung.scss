@@ -1,10 +1,9 @@
 @import '../../../styles/variables.scss';
 @import '../../../styles/mixin.scss';
+@import '../../../styles/common.scss';
 
 /* nav Start */
 .mainPage {
-  background-color: #fafafa;
-
   main {
     position: absolute;
     margin-top: 90px;
@@ -16,7 +15,7 @@
     display: flex;
 
     article {
-      border: 1px solid #e7e7e7;
+      border: $themeBorder;
       width: $mainFeedWidth;
       background-color: white;
 
@@ -39,14 +38,13 @@
             width: 8%;
             margin-right: 18px;
             border-radius: 100%;
-            border: 1px solid lightgray;
+            border: $themeBorder;
           }
         }
 
         .more {
           img {
-            width: 10%;
-            padding-right: 30px;
+            width: 24px;
           }
         }
       }
@@ -96,7 +94,7 @@
             width: 100%;
             object-fit: cover;
             border-radius: 100%;
-            border: 1px solid lightgray;
+            border: $themeBorder;
           }
 
           span {
