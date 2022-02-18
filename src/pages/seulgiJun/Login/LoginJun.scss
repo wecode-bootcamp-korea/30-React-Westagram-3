@@ -1,4 +1,4 @@
-@import '../variablesJun';
+@import '../../../styles/variables.scss';
 
 .loginMain {
   display: flex;
@@ -44,11 +44,18 @@
       button {
         height: 50px;
         margin-top: 10px;
-        background-color: $inactiveColor;
         border: none;
         border-radius: 6px;
         color: white;
         font-size: 22px;
+      }
+
+      .activeBtn {
+        background-color: $activeColor;
+      }
+
+      .inactiveBtn {
+        background-color: $inactiveColor;
       }
     }
 
