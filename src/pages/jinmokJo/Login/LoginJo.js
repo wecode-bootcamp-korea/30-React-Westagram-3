@@ -18,7 +18,7 @@ function LoginJo() {
           <button
             type="submit"
             form="loginForm"
-            class="loginBtn"
+            className="loginBtn"
             onClick={console.log('와 햇갈리네')}
             disabled
           >

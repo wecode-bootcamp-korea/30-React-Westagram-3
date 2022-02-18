@@ -3,13 +3,14 @@ import React, { useState } from 'react';
 function LoginInput(props) {
   const [inputValue, setInputValue] = useState('');
   const handleIdInput = e => {
+    console.log(e.target.value);
     setInputValue(e.target.value);
   };
 
   return (
     <div className="loginInput">
       <span className="inputPlaceholder">{props.placeholder}</span>
-      <input type={props.type} name={props.name} />
+      <input type={props.type} name={props.name} onChange={handleIdInput} />
       {props.name === 'password' ? (
         <button type="button" className="visiblePassword"></button>
       ) : null}
