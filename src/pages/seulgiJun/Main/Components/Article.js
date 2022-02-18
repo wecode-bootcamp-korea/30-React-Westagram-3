@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Comment from './Comment';
+
 function Article() {
   return (
     <article className="feed">
@@ -61,11 +63,7 @@ function Article() {
       </div>
 
       <div className="feedColumn feedColumnSmall">
-        <div className="feedColumnRow comments">
-          <p>
-            <span className="boldText">dal_nim</span> 달님이가 더 귀여워^~^
-          </p>
-        </div>
+        <Comment />
         <div className="feedColumnRow">
           <img
             alt="heart icon"
