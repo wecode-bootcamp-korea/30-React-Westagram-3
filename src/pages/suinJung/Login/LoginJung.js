@@ -17,7 +17,9 @@ function LoginJung() {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
   };
+
   const handleBtn = !(values.Id.includes('@') && values.Password.length > 4);
+
   const pwInput = useRef();
 
   const focusPw = e => {
@@ -25,7 +27,6 @@ function LoginJung() {
       pwInput.current.focus();
     }
   };
-
   return (
     <>
       <div className="loginContainer">
@@ -35,6 +36,7 @@ function LoginJung() {
             <form>
               <input
                 name="Id"
+                value={values.Id}
                 className="inputBox"
                 type="text"
                 placeholder="전화번호, 사용자 이름 또는 이메일"
@@ -44,6 +46,7 @@ function LoginJung() {
               />
               <input
                 name="Password"
+                value={values.Password}
                 className="inputBox"
                 type="password"
                 placeholder="비밀번호"
@@ -55,6 +58,7 @@ function LoginJung() {
                 className="log-btn"
                 disabled={handleBtn}
                 onClick={goToMain}
+                style={{ cursor: handleBtn ? 'default' : 'pointer' }}
               >
                 로그인
               </button>
