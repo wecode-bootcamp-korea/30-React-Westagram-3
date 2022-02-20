@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Nav from '../../../components/Nav/Nav';
 import './MainJung.scss';
 
