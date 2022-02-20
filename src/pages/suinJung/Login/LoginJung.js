@@ -17,6 +17,14 @@ function LoginJung() {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
   };
+  const handleBtn = !(values.Id.includes('@') && values.Password.length > 4);
+  const pwInput = useRef();
+
+  const focusPw = e => {
+    if (e.code === 'Enter') {
+      pwInput.current.focus();
+    }
+  };
 
   return (
     <>
@@ -31,18 +39,21 @@ function LoginJung() {
                 type="text"
                 placeholder="전화번호, 사용자 이름 또는 이메일"
                 onChange={handleInput}
+                onKeyUp={focusPw}
+                autoFocus
               />
               <input
                 name="Password"
                 className="inputBox"
                 type="password"
                 placeholder="비밀번호"
+                ref={pwInput}
                 onChange={handleInput}
               />
               <button
                 name="data"
                 className="log-btn"
-                disabled
+                disabled={handleBtn}
                 onClick={goToMain}
               >
                 로그인
