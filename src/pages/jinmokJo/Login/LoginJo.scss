@@ -5,6 +5,11 @@ $themeBorder: 1px solid #dbdbdb;
 
 $outLineColor: #8e8e8e;
 
+button {
+  all: unset;
+  text-align: center;
+}
+
 .Login {
   @extend %absoluteCenter;
   @include flexBox(space-between, center, column);
@@ -56,8 +61,6 @@ $outLineColor: #8e8e8e;
           align-self: flex-end;
           width: fit-content;
           height: 100%;
-          border: none;
-          background-color: unset;
           font-size: 14px;
           cursor: pointer;
         }
@@ -72,12 +75,16 @@ $outLineColor: #8e8e8e;
       width: 100%;
       margin-top: 5px;
       height: 30px;
-      border: unset;
       border-radius: 5px;
-      background-color: #c5e0fc;
       color: white;
       font-weight: 600;
       font-size: 14px;
+      background-color: $inactiveColor;
+    }
+
+    .activeLoginBtn {
+      background-color: $activeColor;
+      cursor: pointer;
     }
   }
 
