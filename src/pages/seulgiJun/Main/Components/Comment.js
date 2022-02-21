@@ -1,13 +1,11 @@
 import React from 'react';
 
-function Comments(props) {
+function Comment(props) {
   return (
-    <div className="feedColumnRow comments">
-      <p>
-        <span className="boldText">{props.username}</span> {props.text}
-      </p>
-    </div>
+    <p>
+      <span className="boldText">{props.username}</span> {props.text}
+    </p>
   );
 }
 
-export default Comments;
+export default Comment;

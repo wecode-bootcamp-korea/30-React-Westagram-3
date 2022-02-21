@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
 
-import Comment from './Comment';
+// import Comment from './Comment';
+import Comments from './Comments';
 
 function Article() {
-  const [commentValue, setCommentValue] = useState('');
+  const [inputValue, setInputValue] = useState();
+  const [comments, setComments] = useState([]);
+  // const []
 
-  const handleCommentValue = event => {
-    setCommentValue(event.target.value);
-    console.log(commentValue);
+  const handleComments = event => {
+    setInputValue(event.target.value);
   };
 
-  const commentsArr = [];
   const addComment = event => {
     event.preventDefault();
-    commentsArr.push(commentValue);
-    console.log(commentsArr);
+    // console.log(inputValue);
+    setComments([...comments, inputValue]);
+    // console.log(comments);
   };
 
   return (
@@ -77,7 +79,7 @@ function Article() {
       </div>
 
       <div className="feedColumn feedColumnSmall">
-        <Comment username="dal_nim" text="달님이가 더 귀여워^~^" />
+        <Comments comments={comments} username="hae_nim" />
         <div className="feedColumnRow">
           <img
             alt="heart icon"
@@ -95,7 +97,7 @@ function Article() {
 
       <form className="feedColumn">
         <input
-          onChange={handleCommentValue}
+          onChange={handleComments}
           className="comment"
           placeholder="댓글 달기..."
         />
