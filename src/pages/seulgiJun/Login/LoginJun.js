@@ -12,10 +12,10 @@ function LoginJun() {
     navigator('/main-jun');
   };
 
-  const handledIdInput = event => {
+  const handleIdInput = event => {
     setIdValue(event.target.value);
   };
-  const handledPwInput = event => {
+  const handlePwInput = event => {
     setPwValue(event.target.value);
   };
 
@@ -25,11 +25,11 @@ function LoginJun() {
         <h1>Westagram</h1>
         <form className="loginForm">
           <input
-            onChange={handledIdInput}
+            onChange={handleIdInput}
             placeholder="전화번호, 사용자 이름 또는 이메일"
           />
           <input
-            onChange={handledPwInput}
+            onChange={handlePwInput}
             type="password"
             placeholder="비밀번호"
           />

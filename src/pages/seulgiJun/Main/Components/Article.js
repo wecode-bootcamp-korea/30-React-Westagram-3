@@ -1,8 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Comment from './Comment';
 
 function Article() {
+  const [commentValue, setCommentValue] = useState('');
+
+  const handleCommentValue = event => {
+    setCommentValue(event.target.value);
+    console.log(commentValue);
+  };
+
+  const commentsArr = [];
+  const addComment = event => {
+    event.preventDefault();
+    commentsArr.push(commentValue);
+    console.log(commentsArr);
+  };
+
   return (
     <article className="feed">
       <div className="feedColumn">
@@ -63,7 +77,7 @@ function Article() {
       </div>
 
       <div className="feedColumn feedColumnSmall">
-        <Comment />
+        <Comment username="dal_nim" text="달님이가 더 귀여워^~^" />
         <div className="feedColumnRow">
           <img
             alt="heart icon"
@@ -80,8 +94,14 @@ function Article() {
       </div>
 
       <form className="feedColumn">
-        <input className="comment" placeholder="댓글 달기..." />
-        <button className="postButton">게시</button>
+        <input
+          onChange={handleCommentValue}
+          className="comment"
+          placeholder="댓글 달기..."
+        />
+        <button onClick={addComment} className="postButton">
+          게시
+        </button>
       </form>
     </article>
   );

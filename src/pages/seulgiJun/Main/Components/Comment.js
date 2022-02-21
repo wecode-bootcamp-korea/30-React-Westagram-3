@@ -1,10 +1,10 @@
 import React from 'react';
 
-function Comments() {
+function Comments(props) {
   return (
     <div className="feedColumnRow comments">
       <p>
-        <span className="boldText">dal_nim</span> 달님이가 더 귀여워^~^
+        <span className="boldText">{props.username}</span> {props.text}
       </p>
     </div>
   );
