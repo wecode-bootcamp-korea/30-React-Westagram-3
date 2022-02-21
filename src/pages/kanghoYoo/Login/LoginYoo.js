@@ -21,7 +21,7 @@ function LoginYoo() {
   };
 
   const btColor = document.getElementsByClassName('loginBtn')[0];
-  function changeColor(e) {
+  function ableColor(e) {
     btColor.style.backgroundColor = 'rgb(0, 150, 250)';
     setActive(false);
 
@@ -29,12 +29,16 @@ function LoginYoo() {
       goToMain();
     }
   }
+  function disableColor() {
+    btColor.style.backgroundColor = 'rgb(176, 213, 255)';
+    setActive(true);
+  }
 
   const [active, setActive] = useState(true);
   const handleKeyUp = e => {
     id.length > 5 && id.includes('@') && pw.length > 5
-      ? changeColor(e)
-      : setActive(true);
+      ? ableColor(e)
+      : disableColor();
   };
 
   return (
