@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 // import Comment from './Comment';
 import Comments from './Comments';
@@ -6,7 +6,7 @@ import Comments from './Comments';
 function Article() {
   const [inputValue, setInputValue] = useState();
   const [comments, setComments] = useState([]);
-  // const []
+  const input = useRef();
 
   const handleComments = event => {
     setInputValue(event.target.value);
@@ -14,9 +14,8 @@ function Article() {
 
   const addComment = event => {
     event.preventDefault();
-    // console.log(inputValue);
     setComments([...comments, inputValue]);
-    // console.log(comments);
+    input.current.value = '';
   };
 
   return (
@@ -98,6 +97,7 @@ function Article() {
       <form className="feedColumn">
         <input
           onChange={handleComments}
+          ref={input}
           className="comment"
           placeholder="댓글 달기..."
         />
