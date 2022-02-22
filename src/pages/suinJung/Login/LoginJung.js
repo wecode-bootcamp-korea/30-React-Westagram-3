@@ -17,7 +17,7 @@ function LoginJung() {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
   };
-
+  console.log(values.Id);
   const handleBtn = !(values.Id.includes('@') && values.Password.length > 4);
 
   const pwInput = useRef();

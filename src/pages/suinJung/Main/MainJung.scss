@@ -13,11 +13,13 @@
     );
     margin-top: 90px;
     display: flex;
+    flex-direction: column;
 
     article {
       border: $themeBorder;
       width: $mainFeedWidth;
       background-color: white;
+      margin-bottom: 30px;
 
       /* feed Top */
       .feed-nav {
@@ -69,13 +71,21 @@
         .interactiveicon {
           display: flex;
           justify-content: space-between;
-
+          i {
+            font-size: 24px;
+            color: $fontSubColor;
+          }
           img {
             width: 4%;
           }
 
-          .icon-left img {
-            margin-right: 10px;
+          .icon-left {
+            img {
+              margin-right: 10px;
+            }
+            i {
+              margin-right: 8px;
+            }
           }
         }
 
