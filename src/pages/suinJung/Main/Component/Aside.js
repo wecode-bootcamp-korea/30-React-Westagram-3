@@ -2,7 +2,7 @@ import AsideBox from './AsideBox';
 
 function Aside() {
   return (
-    <div className="right">
+    <div className="aside">
       <div className="main-right">
         <div className="myproflie">
           <div className="myimage">
@@ -29,30 +29,10 @@ function Aside() {
             <p>회원님을 위한 추천</p>
             <p>모두 보기</p>
           </div>
-          <div className="box-content">
-            <img src="https://images.unsplash.com/photo-1644308414681-709b417832b8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" />
-            <div>
-              <h3>이름</h3>
-              <p>몇 분전</p>
-            </div>
-            <p className="follow">팔로우</p>
-          </div>
-          <div className="box-content">
-            <img src="https://images.unsplash.com/photo-1644308414681-709b417832b8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" />
-            <div>
-              <h3>이름</h3>
-              <p>몇 분전</p>
-            </div>
-            <p className="follow">팔로우</p>
-          </div>
-          <div className="box-content">
-            <img src="https://images.unsplash.com/photo-1644308414681-709b417832b8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" />
-            <div>
-              <h3>이름</h3>
-              <p>몇 분전</p>
-            </div>
-            <p className="follow">팔로우</p>
-          </div>
+          <AsideBox />
+          <AsideBox />
+          <AsideBox />
+          <AsideBox />
         </div>
         <div className="footer">
           <p>

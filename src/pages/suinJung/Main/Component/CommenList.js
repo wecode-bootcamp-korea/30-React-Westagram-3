@@ -5,7 +5,7 @@ function CommentList(props) {
   const [commentList, setCommentList] = useState([]); // 댓글 내용만 모아놓은 배열
 
   useEffect(() => {
-    fetch('http://localhost:3000/data/commentData.json', {
+    fetch('http://localhost:3000/data/suinJung/commentData.json', {
       method: 'GET',
     })
       .then(response => response.json())
@@ -25,8 +25,8 @@ function CommentList(props) {
           />
         );
       })}
-      {props.text.map(el => {
-        return <Comment name="jung" comment={el} />;
+      {props.text.map((el, index) => {
+        return <Comment key={index} name="jung" comment={el} />;
       })}
     </div>
   );

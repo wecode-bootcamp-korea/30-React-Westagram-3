@@ -9,12 +9,15 @@ function Article({ name }) {
     setContent(event.target.value);
   };
 
-  const handleClick = event => {
+  const handleClick = e => {
+    e.preventDefault();
     contentArray.push(content);
     setContentArray(contentArray);
     setContent('');
   };
-  console.log(contentArray);
+
+  const isValid = !(content.length > 0);
+
   return (
     <article>
       <div className="feed-nav">
@@ -49,12 +52,12 @@ function Article({ name }) {
             <span>aineworld</span>님 <span>외 10명</span>이 좋아합니다.
           </p>
         </div>
-        <div style={{ marginTop: '10px' }} className="comment">
+        <div style={{ marginTop: '10px' }} className="comment-start">
           <CommentList text={contentArray} />
         </div>
         <p className="aftertime">42분 전</p>
       </div>
-      <div className="commentplace">
+      <form>
         <input
           id="comment"
           type="text"
@@ -62,10 +65,15 @@ function Article({ name }) {
           value={content}
           onChange={commentContent}
         />
-        <button className="gocomment" onClick={handleClick}>
+        <button
+          className="gocomment"
+          disabled={isValid}
+          onClick={handleClick}
+          style={{ cursor: !isValid ? 'pointer' : 'default' }}
+        >
           게시
         </button>
-      </div>
+      </form>
     </article>
   );
 }

@@ -7,6 +7,7 @@ import { type } from '@testing-library/user-event/dist/type';
 
 function LoginJung() {
   const navigate = useNavigate();
+
   const goToMain = () => {
     navigate('/main-jung');
   };
@@ -17,7 +18,7 @@ function LoginJung() {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
   };
-  console.log(values.Id);
+
   const handleBtn = !(values.Id.includes('@') && values.Password.length > 4);
 
   const pwInput = useRef();
@@ -29,7 +30,7 @@ function LoginJung() {
   };
   return (
     <>
-      <div className="loginContainer">
+      <div className="login">
         <main className="loginBox">
           <h1 className="logo">Westagram</h1>
           <div className="loginText">

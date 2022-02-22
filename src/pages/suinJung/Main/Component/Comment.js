@@ -1,6 +1,6 @@
 function Comment({ name, comment }) {
   return (
-    <div className="commentblock">
+    <div className="comment">
       <div>
         <div>
           <p className="nickname">{name}</p>

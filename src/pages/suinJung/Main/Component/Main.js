@@ -5,7 +5,7 @@ function Main() {
   const [ArticleList, setArticleList] = useState([]); // 댓글 내용만 모아놓은 배열
 
   useEffect(() => {
-    fetch('http://localhost:3000/data/feeds.json', {
+    fetch('http://localhost:3000/data/suinJung/feeds.json', {
       method: 'GET',
     })
       .then(response => response.json())
