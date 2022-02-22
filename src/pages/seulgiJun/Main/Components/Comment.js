@@ -2,7 +2,7 @@ import React from 'react';
 
 function Comment(props) {
   return (
-    <p key={props.id}>
+    <p>
       <span className="boldText">{props.username}</span> {props.text}
     </p>
   );

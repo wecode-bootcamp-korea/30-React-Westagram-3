@@ -1,7 +1,8 @@
 import React from 'react';
+
 import Comment from './Comment';
 
-function Comments(props) {
+function CommentList(props) {
   return (
     <div className="feedColumnRow comments">
       {props.commentsData.map(comment => (
@@ -11,11 +12,11 @@ function Comments(props) {
           text={comment.content}
         />
       ))}
-      {props.comments.map((comment, index) => (
-        <Comment key={index} username={props.username} text={comment} />
+      {props.newComments.map((comment, index) => (
+        <Comment key={index} username={props.currentUsername} text={comment} />
       ))}
     </div>
   );
 }
 
-export default Comments;
+export default CommentList;

@@ -1,16 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-// import Comment from './Comment';
-import Comments from './Comments';
+import CommentList from './CommentList';
 
 function Article(props) {
   const [inputValue, setInputValue] = useState();
-  const [comments, setComments] = useState([]);
+  const [newComments, setNewComments] = useState([]);
   const [commentsData, setCommentsData] = useState([]);
   const input = useRef();
 
   useEffect(() => {
-    fetch('http://localhost:3000/data/commentData.json', {
+    fetch('http://localhost:3000/data/seulgiJun/commentData.json', {
       method: 'GET',
     })
       .then(res => res.json())
@@ -19,13 +18,13 @@ function Article(props) {
       });
   }, []);
 
-  const getComments = event => {
+  const getComment = event => {
     setInputValue(event.target.value);
   };
 
   const addComment = event => {
     event.preventDefault();
-    setComments([...comments, inputValue]);
+    setNewComments([...newComments, inputValue]);
     input.current.value = '';
   };
 
@@ -74,7 +73,7 @@ function Article(props) {
             src="/images/seulgiJun/햇님.jpeg"
           />
           <p>
-            <span className="boldText">hae_nim</span>님{' '}
+            <span className="boldText">hae_nim</span>님
             <span className="boldText">외 {props.feed.countLike}명</span>이
             좋아합니다
           </p>
@@ -90,10 +89,10 @@ function Article(props) {
       </div>
 
       <div className="feedColumn feedColumnSmall">
-        <Comments
-          comments={comments}
+        <CommentList
+          newComments={newComments}
           commentsData={commentsData}
-          username="hae_nim"
+          currentUsername="hae_nim"
         />
         <div className="feedColumnRow">
           <img
@@ -112,7 +111,7 @@ function Article(props) {
 
       <form className="feedColumn">
         <input
-          onChange={getComments}
+          onChange={getComment}
           ref={input}
           className="comment"
           placeholder="댓글 달기..."

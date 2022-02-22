@@ -5,18 +5,15 @@ import './LoginJun.scss';
 
 function LoginJun() {
   const navigator = useNavigate();
-  const [idValue, setIdValue] = useState('');
-  const [pwValue, setPwValue] = useState('');
+  const [inputValue, setInputValue] = useState({ id: '', password: '' });
 
   const goToMain = () => {
     navigator('/main-jun');
   };
 
-  const handleIdInput = event => {
-    setIdValue(event.target.value);
-  };
-  const handlePwInput = event => {
-    setPwValue(event.target.value);
+  const handleInput = event => {
+    const { name, value } = event.target;
+    setInputValue({ ...inputValue, [name]: value });
   };
 
   return (
@@ -25,17 +22,20 @@ function LoginJun() {
         <h1>Westagram</h1>
         <form className="loginForm">
           <input
-            onChange={handleIdInput}
+            name="id"
+            onChange={handleInput}
             placeholder="전화번호, 사용자 이름 또는 이메일"
           />
           <input
-            onChange={handlePwInput}
+            name="password"
+            onChange={handleInput}
             type="password"
             placeholder="비밀번호"
           />
           <button
             className={
-              idValue.includes('@') && pwValue.length >= 5
+              inputValue['id'].includes('@') &&
+              inputValue['password'].length >= 5
                 ? 'activeBtn'
                 : 'inactiveBtn'
             }

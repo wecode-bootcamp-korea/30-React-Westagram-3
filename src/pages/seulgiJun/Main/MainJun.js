@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from 'react';
 
-import './MainJun.scss';
-
 import Nav from '../../../components/Nav/Nav';
 import Article from './Components/Article';
 import RightBar from './Components/RightBar';
+
+import './MainJun.scss';
 
 function MainJun() {
   const [feedData, setFeedData] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/data/feedData.json', { method: 'GET' })
+    fetch('http://localhost:3000/data/seulgiJun/feedData.json', {
+      method: 'GET',
+    })
       .then(res => res.json())
       .then(data => setFeedData(data));
   }, []);
