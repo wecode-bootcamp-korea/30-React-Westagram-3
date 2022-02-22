@@ -52,7 +52,6 @@ function LoginYoo() {
             className="inputId"
             placeholder="전화번호, 사용자 이름 또는 이메일"
             onKeyUp={handleKeyUp}
-            // onKeyPress={enterLogin}
             value={id}
           />
           <input
@@ -61,7 +60,6 @@ function LoginYoo() {
             className="inputPw"
             placeholder="비밀번호"
             onKeyUp={handleKeyUp}
-            // onKeyPress={enterLogin}
             value={pw}
           />
         </div>
@@ -76,7 +74,7 @@ function LoginYoo() {
           </button>
         </div>
         <div className="link">
-          <Link to="/Main">비밀번호를 잊으셨나요?</Link>
+          <Link to="/login-yoo">비밀번호를 잊으셨나요?</Link>
         </div>
       </main>
     </div>

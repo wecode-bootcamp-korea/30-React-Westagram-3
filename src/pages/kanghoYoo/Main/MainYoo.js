@@ -1,11 +1,52 @@
 import React from 'react';
 import './MainYoo.scss';
-//import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Nav from '../../../components/Nav/Nav';
+import { useState } from 'react';
+import commentList from '.././Components/CommentList';
 
 function MainYoo() {
+  const commentValue = [
+    { name: 'vertex7785', text: '시간이 되게 빠르게 지나가네...' },
+    {
+      name: 'coke_0kal',
+      text: '저기 오른쪽으로 가시면 극장이 있죠. 극장에서 쭉 가시면 시장이 나옵니다. 시장에서 왼쪽으로 돌면 편의점, 편의점 건녀편에 이발소, 이발소 옆 골목으로 들어가서 오른쪽 첫번째 집이 저희 집입니다.',
+    },
+  ];
+
+  const [comment, setComment] = useState([]);
+  // const [arrComment, setArrComment] = useState([]);
+  const upload = document.getElementsByClassName('.comments')[0];
+
+  function uploads() {
+    commentValue.map(el => {
+      return (
+        <li className="mentsWrap">
+          <span className="commentId">{el.name}</span> {el.text}
+        </li>
+      );
+    });
+  }
+
+  function commentInput(e) {
+    setComment(e.target.value);
+  }
+
+  const cmtInput = document.getElementsByClassName('.commentInput')[0];
+
+  function commentSend() {
+    if (cmtInput.value !== '') {
+    }
+  }
+
+  function enter(e) {
+    if (e.key === 'enter') {
+      commentSend();
+    }
+  }
+
   return (
-    <div className="wrap">
+    <>
       <Nav />
       <main className="main">
         <div className="feeds">
@@ -54,20 +95,24 @@ function MainYoo() {
               </span>
             </div>
             <div className="comments">
-              <p className="mentsWrap">
-                <span className="commentId oneId">vertex7785</span>
-                <span className="comment cmt1">
-                  시간이 벌써 이렇게 지났네...
-                </span>
-                <span className="more"> 더 보기</span>
-              </p>
-              <p className="mentsWrap">
-                <span className="commentId twoId">coke_0kal</span>
-                <span className="comment cmt2">
-                  스파게티가 생각이 나는 날이야~!
-                </span>
-              </p>
+              {commentValue.map(el => {
+                return (
+                  <li className="mentsWrap">
+                    <span className="commentId">{el.name}</span> {el.text}
+                  </li>
+                );
+              })}
+              {/* {commentList.map((item, i) => {
+                return (
+                  <div className="commentWrap" key={i} id={id} text="item">
+                    <li className="comment" key={props.key}>
+                      <span className="commentId">{props.id}</span> {props.text}
+                    </li>
+                  </div>
+                );
+              })} */}
             </div>
+            <div className="comments" />
             <div>
               <p className="mentTime">42분 전</p>
             </div>
@@ -76,14 +121,15 @@ function MainYoo() {
               <input
                 type="text"
                 className="commentInput"
-                value=""
-                onkeyup="enterkey()"
+                value={comment}
+                onChange={commentInput}
                 placeholder="댓글 달기..."
+                onProgress={enter}
               />
               <input
                 type="button"
                 className="send"
-                onclick="mentSend();"
+                onclick={commentSend}
                 value="게시"
               />
             </div>
@@ -189,7 +235,7 @@ function MainYoo() {
                   _blosanrang님 외 22명이 팔로잉 중
                 </span>
               </div>
-              <a href="#">팔로우</a>
+              <Link to="/main-Yoo">팔로우</Link>
             </div>
             <div className="recomment">
               <div className="anotherProfile">
@@ -203,7 +249,7 @@ function MainYoo() {
                 <p>Caldit_q</p>
                 <span className="flowing">kukuro_P님 외 10명이 팔로잉 중</span>
               </div>
-              <a href="#">팔로우</a>
+              <Link to="/main-Yoo">팔로우</Link>
             </div>
             <div className="recomment">
               <div className="anotherProfile">
@@ -219,7 +265,7 @@ function MainYoo() {
                   js_lover_html님 외 2명이 팔로잉 중
                 </span>
               </div>
-              <a href="#">팔로우</a>
+              <Link to="/main-Yoo">팔로우</Link>
             </div>
           </div>
         </div>
@@ -231,7 +277,7 @@ function MainYoo() {
           <span>&copy; 2022 WESTARGRAM</span>
         </footer>
       </div>
-    </div>
+    </>
   );
 }
 

@@ -1,0 +1,19 @@
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+$borderStyle: 1px solid gainsboro;

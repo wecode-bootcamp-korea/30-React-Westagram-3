@@ -1,73 +1,67 @@
-$theme-color: rgb(252, 252, 252);
-$border-style: 1px solid gainsboro;
-
-@mixin flex-column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+@import './../../../styles/variables.scss';
+@import './../../../styles/mixin.scss';
+@import '.././styles/variables.scss';
 
 .login-js {
-  @include flex-column;
+  @include flexColumn;
   justify-content: center;
-  background-color: $theme-color;
-}
+  height: 100vh;
 
-.wrapClass {
-  @include flex-column;
-  width: 350px;
-  height: 382px;
-  background-color: white;
-  border: $border-style;
+  .wrapClass {
+    @include flexColumn;
+    width: 350px;
+    height: 382px;
+    background-color: white;
+    border: $borderStyle;
 
-  span {
-    margin: 30px 0px 50px 0px;
-  }
+    span {
+      margin: 30px 0px 50px 0px;
+    }
 
-  .inputBox {
-    @include flex-column;
-  }
+    .lobsterFont {
+      font-size: 42px;
+      font-weight: 700;
+      font-family: 'Lobster', cursive;
+      cursor: default;
+    }
 
-  .inputId,
-  .inputPw {
-    width: 258px;
-    height: 36px;
-    margin-bottom: 6px;
-    padding-left: 10px;
-    color: black;
-    background-color: $theme-color;
-    border: $border-style;
-    border-radius: 2px;
-    font-size: 12px;
-  }
+    .inputBox {
+      @include flexColumn;
 
-  .btnBox {
-    padding: 10px 0px 90px 0px;
+      .inputId,
+      .inputPw {
+        width: 258px;
+        height: 36px;
+        margin-bottom: 6px;
+        padding-left: 10px;
+        color: black;
+        border: $borderStyle;
+        border-radius: 2px;
+        font-size: 12px;
+      }
+    }
 
-    .loginBtn {
-      width: 258px;
-      height: 35px;
-      color: white;
-      background-color: rgb(176, 213, 255);
-      border: none;
-      border-radius: 5px;
-      font-size: 15px;
-      font-style: bold;
+    .btnBox {
+      padding: 10px 0px 90px 0px;
+
+      .loginBtn {
+        width: 258px;
+        height: 35px;
+        color: white;
+        background-color: rgb(176, 213, 255);
+        border: none;
+        border-radius: 5px;
+        font-size: 15px;
+        font-style: bold;
+      }
+    }
+
+    .link {
+      a {
+        color: rgb(0, 5, 71);
+        font-size: 12px;
+        text-decoration: none;
+      }
     }
   }
-
-  .link {
-    a {
-      color: rgb(0, 5, 71);
-      font-size: 12px;
-      text-decoration: none;
-    }
-  }
-}
-
-.lobsterFont {
-  font-size: 42px;
-  font-weight: 700;
-  font-family: 'Lobster', cursive;
-  cursor: default;
 }

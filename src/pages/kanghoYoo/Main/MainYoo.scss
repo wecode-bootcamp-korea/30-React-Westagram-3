@@ -1,193 +1,171 @@
 @import './../../../styles/variables.scss';
 @import './../../../styles/mixin.scss';
-
-@mixin flex-column {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-}
-
-@mixin flex-row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-}
-
-.wrap {
-  background-color: rgb(245, 245, 245);
-}
+@import '.././styles/variables.scss';
 
 .main {
   position: absolute;
   top: 90px;
   left: 50%;
   transform: translateX(calc((($mainAsideWidth + $mainFeedWidth) / 2) * (-1)));
-}
+  padding-bottom: 50px;
 
-.article {
-  @include flex-column;
-  border: 1px solid gainsboro;
-  border-radius: 4px;
-}
+  .article {
+    @include flex-column;
+    border: 1px solid gainsboro;
+    border-radius: 4px;
 
-.articleTop {
-  @include flex-row;
-  justify-content: space-between;
-  align-items: center;
-  height: 60px;
-  background-color: white;
-}
+    .articleTop {
+      @include flex-row;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+      background-color: white;
 
-.account {
-  @include flex-row;
-  align-items: center;
-  padding: 0px 15px;
-}
+      .account {
+        @include flex-row;
+        align-items: center;
+        padding: 0px 15px;
 
-.name {
-  span {
-    padding-left: 14px;
-    font-size: 14px;
-    font-weight: bold;
+        .profile {
+          width: 45px;
+          margin-top: 5px;
+          border-radius: 100px;
+        }
+
+        .name {
+          span {
+            padding-left: 14px;
+            font-size: 14px;
+            font-weight: bold;
+          }
+        }
+      }
+
+      .fa-ellipsis-h {
+        margin-right: 15px;
+        color: gray;
+        font-size: 20px;
+      }
+    }
+    .artImg {
+      width: $mainFeedWidth;
+      height: 650px;
+      object-fit: cover;
+    }
+
+    .iconsWrap {
+      @include flex-row;
+      justify-content: space-between;
+
+      .fa-heart,
+      .fa-comment,
+      .fa-file-upload,
+      .fa-bookmark {
+        font-size: 30px;
+        margin: 3px 10px 0px 3px;
+        color: gray;
+      }
+
+      .icons {
+        padding: 15px;
+
+        .heart {
+          border: none;
+          background-color: transparent;
+
+          .fa-heart {
+            color: rgb(248, 50, 50);
+          }
+        }
+      }
+
+      .fa-bookmark {
+        padding: 15px;
+        color: rgb(63, 63, 63);
+      }
+    }
+
+    .alert {
+      @include flex-row;
+      align-items: center;
+
+      .loveProfile {
+        border: 1px solid gainsboro;
+        border-radius: 100px;
+        width: 25px;
+        height: 25px;
+        margin: 0px 10px 0px 15px;
+      }
+
+      .good {
+        font-size: 14px;
+
+        .bold {
+          font-weight: bold;
+        }
+      }
+    }
+
+    .comments {
+      margin-top: 10px;
+
+      .mentsWrap {
+        width: $mainFeedWidth;
+        list-style: none;
+        padding-left: 20px;
+        font-size: 14px;
+        margin-bottom: 4px;
+
+        .commentId {
+          font-weight: bold;
+          margin-right: 5px;
+        }
+      }
+    }
+
+    .mentTime {
+      margin-bottom: 5px;
+      padding-left: 20px;
+      font-weight: bold;
+      color: rgb(197, 197, 197);
+      font-size: 13px;
+    }
+
+    .input {
+      display: flex;
+      direction: row;
+      justify-content: end;
+      border-top: 1px solid gainsboro;
+
+      .commentInput {
+        width: 100%;
+        height: 35px;
+        border: none;
+        background: none;
+        padding-left: 14px;
+        outline: none;
+        font-size: 16px;
+
+        :focus {
+          outline: none;
+        }
+      }
+
+      .send {
+        width: 70px;
+        border: none;
+        background: none;
+        font-size: 15px;
+        font-weight: bold;
+        color: rgb(0, 138, 202);
+        opacity: 0.5;
+
+        :hover {
+          cursor: pointer;
+        }
+      }
+    }
   }
-}
-
-.profile {
-  width: 45px;
-  margin-top: 5px;
-  border-radius: 100px;
-}
-
-.fa-ellipsis-h {
-  margin-right: 15px;
-  color: gray;
-  font-size: 20px;
-}
-
-.artImg {
-  width: $mainFeedWidth;
-  height: 650px;
-  object-fit: cover;
-}
-
-.iconsWrap {
-  @include flex-row;
-  justify-content: space-between;
-}
-
-.icons {
-  padding: 15px;
-}
-
-.fa-heart,
-.fa-comment,
-.fa-file-upload,
-.fa-bookmark {
-  font-size: 30px;
-  margin: 3px 10px 0px 3px;
-  color: gray;
-}
-
-.fa-heart {
-  color: rgb(248, 50, 50);
-}
-
-.fa-bookmark {
-  padding: 15px;
-  color: rgb(63, 63, 63);
-}
-
-.alert {
-  @include flex-row;
-  align-items: center;
-}
-
-.bold {
-  font-weight: bold; //공통
-}
-
-.loveProfile {
-  border: 1px solid gainsboro;
-  border-radius: 100px;
-  width: 25px;
-  height: 25px;
-  margin: 0px 10px 0px 15px;
-}
-.good {
-  font-size: 14px;
-}
-
-.comments {
-  margin-top: 10px;
-}
-.mentsWrap {
-  padding-left: 20px;
-  font-size: 14px;
-  margin-bottom: 4px;
-}
-
-.mentsMoreWrap {
-  margin: 2px 0;
-  font-size: 14px;
-}
-.commentId {
-  font-weight: bold;
-  margin-right: 5px;
-}
-.mentTime {
-  padding-left: 20px;
-  font-weight: bold;
-  color: rgb(197, 197, 197);
-  font-size: 15px;
-}
-
-.input {
-  display: flex;
-  direction: row;
-  justify-content: end;
-  border-top: 1px solid gainsboro;
-}
-
-.commentInput {
-  width: 100%;
-  height: 35px;
-  border: none;
-  background: none;
-  padding-left: 14px;
-  outline: none;
-  font-size: 16px;
-}
-
-.commentInput:focus {
-  outline: none;
-}
-
-.send {
-  width: 70px;
-  border: none;
-  background: none;
-  font-size: 15px;
-  font-weight: bold;
-  color: rgb(0, 138, 202);
-  opacity: 0.5;
-}
-
-.more {
-  color: grey;
-}
-.send:hover {
-  cursor: pointer;
-}
-
-.newMent {
-  width: 100%;
-  height: 50px;
-}
-
-.delate {
-  margin-left: 5px;
-  border: none;
-  background: none;
 }
 
 .mainRight {
@@ -197,52 +175,52 @@
   padding: 0px 0px 0px 20px;
   width: $mainAsideWidth;
   transform: translateX(calc(($mainFeedWidth - $mainAsideWidth) / 2));
-}
 
-.right1 {
-  @include flex-row;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.profiles {
-  border-radius: 100px;
-  width: 45px;
-}
-
-.anotherInfo {
-  padding-left: 12px;
-
-  p {
-    font-weight: bold;
-    margin-bottom: 2px;
+  .right1 {
+    @include flex-row;
+    align-items: center;
+    margin-bottom: 10px;
   }
 
-  span {
-    color: gray;
+  .profiles {
+    border-radius: 100px;
+    width: 45px;
   }
-}
+  .anotherInfo {
+    padding-left: 12px;
 
-.en-name {
-  border-right: 1px solid gray;
-  padding-right: 5px;
-  margin-right: 5px;
-}
-.names {
-  font-size: 14px;
-}
+    p {
+      font-weight: bold;
+      margin-bottom: 2px;
+    }
 
-.right2 {
-  border: 1px solid gainsboro;
-  border-radius: 4px;
-  background-color: white;
-  height: 230px;
-  overflow: scroll;
-  -ms-overflow-style: none;
-}
+    span {
+      color: gray;
+    }
 
-.right2::-webkit-scrollbar {
-  display: none;
+    .en-name {
+      border-right: 1px solid gray;
+      padding-right: 5px;
+      margin-right: 5px;
+    }
+
+    .names {
+      font-size: 14px;
+    }
+  }
+
+  .right2 {
+    border: 1px solid gainsboro;
+    border-radius: 4px;
+    background-color: white;
+    height: 230px;
+    overflow: scroll;
+    -ms-overflow-style: none;
+
+    :-webkit-scrollbar {
+      display: none;
+    }
+  }
 }
 
 .storyTop {
@@ -284,9 +262,14 @@
   margin-bottom: 7px;
 
   a {
+    display: inline-block;
+    width: 100%;
+    margin-right: 20px;
+    text-align: right;
     font-size: 14px;
     font-weight: 500;
     color: rgb(0, 139, 204);
+    text-decoration-line: none;
   }
 }
 
