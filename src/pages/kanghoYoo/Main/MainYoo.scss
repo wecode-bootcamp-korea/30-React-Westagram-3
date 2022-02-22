@@ -285,9 +285,9 @@
 .anotherImg2 {
   width: 35px;
   height: 35px;
-  padding: 2px;
   border-radius: 150px;
   margin-left: 15px;
+  padding: 2px;
 }
 
 .times {
@@ -295,13 +295,13 @@
 }
 
 .flowing {
-  font-size: 12px;
+  display: block;
   width: 120px;
   height: 12px;
+  font-size: 12px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  display: block;
 }
 
 .anotherRecomment {
