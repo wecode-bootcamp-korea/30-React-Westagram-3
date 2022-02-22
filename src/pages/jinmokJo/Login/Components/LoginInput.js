@@ -1,16 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-function LoginInput(props) {
+function LoginInput({ placeholder, type, name, inputValue, handleIdInput }) {
+  const [passwordInputType, setPasswordInputType] = useState(type);
+
+  const { userId, password } = inputValue;
+
+  let currentInputValue = name === 'password' ? password : userId;
+
+  let visiblePasswordValid = password.length > 0;
+
+  const visiblePasswordBtn = e => {
+    if (passwordInputType === 'password') {
+      setPasswordInputType('text');
+      e.target.innerText = '숨기기';
+    } else if (passwordInputType === 'text') {
+      setPasswordInputType('password');
+      e.target.innerText = '비밀번호 표시';
+    }
+  };
+
   return (
     <div className="loginInput">
-      <span className="inputPlaceholder">{props.placeholder}</span>
+      <span
+        className={`inputPlaceholder ${
+          currentInputValue.length > 0 ? 'translateinputPlaceholder' : ''
+        }`}
+      >
+        {placeholder}
+      </span>
       <input
-        type={props.type}
-        name={props.name}
-        onChange={props.handleIdInput}
+        className={`${
+          currentInputValue.length > 0 ? 'translateLoginInput' : ''
+        }`}
+        type={name === 'password' ? passwordInputType : type}
+        name={name}
+        onChange={handleIdInput}
       />
-      {props.name === 'password' ? (
-        <button type="button" className="visiblePassword"></button>
+      {name === 'password' ? (
+        <button
+          type="button"
+          className="visiblePassword"
+          onClick={visiblePasswordBtn}
+        >
+          {visiblePasswordValid ? '비밀번호 표시' : ''}
+        </button>
       ) : null}
     </div>
   );

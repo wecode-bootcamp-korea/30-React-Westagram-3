@@ -32,7 +32,7 @@ button {
     }
 
     .loginInput {
-      @include flexBox(center, start, column);
+      @include flexBox(start, center);
       position: relative;
       height: 40px;
       margin-bottom: 10px;
@@ -45,26 +45,36 @@ button {
         position: absolute;
         color: $outLineColor;
         font-size: 12px;
+        pointer-events: none;
         transition: all 0.1s ease-out;
       }
 
+      .translateinputPlaceholder {
+        transform: translateY(-9px);
+        font-size: 10px;
+      }
+
       input {
-        position: absolute;
-        width: 246px;
+        flex-grow: 1;
         padding: 0;
         outline: unset;
         border: none;
         background-color: unset;
         font-size: 12px;
-
-        .visiblePassword {
-          align-self: flex-end;
-          width: fit-content;
-          height: 100%;
-          font-size: 14px;
-          cursor: pointer;
-        }
       }
+
+      .visiblePassword {
+        align-self: flex-end;
+        height: 100%;
+        padding-left: 10px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+    }
+
+    .translateLoginInput {
+      transform: translateY(7px);
+      font-size: 10px;
     }
 
     .loginInput:focus-within {
