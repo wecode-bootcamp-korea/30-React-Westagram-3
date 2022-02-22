@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
 
 import Comment from './Comment';
 
-import COMMENT_LIST from './commentData';
-
 function Feeds() {
   const [commentValue, setCommentValue] = useState('');
-  const [commentsArray, setCommentsArray] = useState([]);
   const [commentList, setCommentList] = useState([]);
 
   useEffect(() => {
@@ -26,8 +22,8 @@ function Feeds() {
 
   const commentSubmitBtnActive = commentValue.length > 0;
 
-  const inputComments = () => {
-    const existingCommentsList = COMMENT_LIST.map(comment => {
+  const updateComments = () => {
+    return commentList.map(comment => {
       return (
         <Comment
           key={comment.id}
@@ -36,37 +32,33 @@ function Feeds() {
         />
       );
     });
-    const inputingCommentsList = commentsArray.map((comment, index) => (
-      <Comment
-        key={index + 1 + existingCommentsList.length}
-        user="me"
-        commentValue={comment}
-      />
-    ));
-    const commentsListArray = [
-      ...existingCommentsList,
-      ...inputingCommentsList,
-    ];
-    ReactDOM.render(
-      <ul>{commentsListArray}</ul>,
-      document.getElementsByClassName('commentsBox')[0]
-    );
   };
 
-  useEffect(inputComments, []);
+  const commetDataToCommentList = () => {
+    const addCommentList = {
+      id: commentList.length + 1,
+      userName: 'wecode_bootcamp',
+      content: commentValue,
+      isLiked: false,
+    };
+    setCommentList(prevState => [...prevState, addCommentList]);
+  };
 
   const submitComment = e => {
     e.preventDefault();
-    setCommentsArray(prevState => [...prevState, commentValue]);
-    commentsArray.push(commentValue);
-    inputComments();
-    commentsArray.pop();
+    commetDataToCommentList();
     e.target.reset();
+    setCommentValue('');
   };
 
   const onCheckEnter = e => {
     if (e.key === 'Enter' && e.shiftKey === false) {
       e.preventDefault();
+      if (commentSubmitBtnActive) {
+        commetDataToCommentList();
+      }
+      e.target.value = '';
+      setCommentValue('');
     }
   };
 
@@ -122,7 +114,7 @@ function Feeds() {
           </span>
         </div>
         <button className="reply">댓글</button>
-        <div className="commentsBox"></div>
+        <ul className="commentsBox">{updateComments()}</ul>
         <div className="upload-time">54분 전</div>
       </div>
       <div className="comments">
