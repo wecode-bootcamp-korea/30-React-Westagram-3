@@ -1,12 +1,23 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 // import Comment from './Comment';
 import Comments from './Comments';
 
 function Article() {
   const [inputValue, setInputValue] = useState();
-  const [comments, setComments] = useState([]);
+  // const [comments, setComments] = useState([]);
   const input = useRef();
+  const [comments, setComments] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/data/commentData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setComments(data);
+      });
+  }, []);
 
   const handleComments = event => {
     setInputValue(event.target.value);
@@ -14,7 +25,7 @@ function Article() {
 
   const addComment = event => {
     event.preventDefault();
-    setComments([...comments, inputValue]);
+    // setComments([...comments, inputValue]);
     input.current.value = '';
   };
 
@@ -78,7 +89,8 @@ function Article() {
       </div>
 
       <div className="feedColumn feedColumnSmall">
-        <Comments comments={comments} username="hae_nim" />
+        {/* <Comments comments={comments} username="hae_nim" /> */}
+        <Comments comments={comments} />
         <div className="feedColumnRow">
           <img
             alt="heart icon"

@@ -13,8 +13,6 @@ function MainJun() {
       <main className="mainMain">
         <div className="feedContainer">
           <Article />
-          <Article />
-          <Article />
         </div>
         <RightBar />
       </main>
