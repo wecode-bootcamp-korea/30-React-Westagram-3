@@ -3,11 +3,11 @@ import React, { useState, useRef, useEffect } from 'react';
 // import Comment from './Comment';
 import Comments from './Comments';
 
-function Article() {
+function Article(props) {
   const [inputValue, setInputValue] = useState();
-  // const [comments, setComments] = useState([]);
-  const input = useRef();
   const [comments, setComments] = useState([]);
+  const [commentsData, setCommentsData] = useState([]);
+  const input = useRef();
 
   useEffect(() => {
     fetch('http://localhost:3000/data/commentData.json', {
@@ -15,17 +15,17 @@ function Article() {
     })
       .then(res => res.json())
       .then(data => {
-        setComments(data);
+        setCommentsData(data);
       });
   }, []);
 
-  const handleComments = event => {
+  const getComments = event => {
     setInputValue(event.target.value);
   };
 
   const addComment = event => {
     event.preventDefault();
-    // setComments([...comments, inputValue]);
+    setComments([...comments, inputValue]);
     input.current.value = '';
   };
 
@@ -34,19 +34,19 @@ function Article() {
       <div className="feedColumn">
         <div className="feedColumnRow">
           <img
-            alt="profile image of haedalbyeol"
+            alt={`profile image of ${props.feed.userName}`}
             className="profileImg"
-            src="/images/seulgiJun/해달별.jpeg"
+            src={props.feed.profileImage}
           />
-          <span>hae_dal_byeol</span>
+          <span>{props.feed.userName}</span>
         </div>
         <img alt="more icon" src="/images/seulgiJun/more.png" />
       </div>
 
       <img
-        alt="image of cat, byeolnim"
+        alt={`image uploaded by ${props.feed.userName}`}
         className="feedImg"
-        src="/images/seulgiJun/별님.jpeg"
+        src={props.feed.image}
       />
 
       <div className="feedColumn">
@@ -75,22 +75,26 @@ function Article() {
           />
           <p>
             <span className="boldText">hae_nim</span>님{' '}
-            <span className="boldText">외 10명</span>이 좋아합니다
+            <span className="boldText">외 {props.feed.countLike}명</span>이
+            좋아합니다
           </p>
         </div>
       </div>
 
       <div className="feedColumn feedColumnSmall">
         <p>
-          <span className="boldText">hae_dal_byeol</span> 별님이는 아래에서
-          찍어도 귀여워...
+          <span className="boldText">{props.feed.userName}</span>
+          {` ${props.feed.content}`}
           <span className="grayText">더 보기</span>
         </p>
       </div>
 
       <div className="feedColumn feedColumnSmall">
-        {/* <Comments comments={comments} username="hae_nim" /> */}
-        <Comments comments={comments} />
+        <Comments
+          comments={comments}
+          commentsData={commentsData}
+          username="hae_nim"
+        />
         <div className="feedColumnRow">
           <img
             alt="heart icon"
@@ -102,13 +106,13 @@ function Article() {
 
       <div className="feedColumn feedColumnSmall">
         <p>
-          <span className="grayText">42분 전</span>
+          <span className="grayText">{props.feed.uploadTime} 전</span>
         </p>
       </div>
 
       <form className="feedColumn">
         <input
-          onChange={handleComments}
+          onChange={getComments}
           ref={input}
           className="comment"
           placeholder="댓글 달기..."
