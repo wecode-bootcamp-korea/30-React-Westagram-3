@@ -1,39 +1,33 @@
 import { useState } from 'react';
 
 export default function Main() {
-  const commentValue = [
-    { name: 'vertex7785', text: '시간이 되게 빠르게 지나가네...' },
+  const [comment, setComment] = useState('');
+  const [commentList, setCommentList] = useState([
+    { id: 1, name: 'vertex7785', text: '시간이 되게 빠르게 지나가네...' },
     {
+      id: 2,
       name: 'coke_0kal',
       text: '저기 오른쪽으로 가시면 극장이 있죠. 극장에서 쭉 가시면 시장이 나옵니다. 시장에서 왼쪽으로 돌면 편의점, 편의점 건녀편에 이발소, 이발소 옆 골목으로 들어가서 오른쪽 첫번째 집이 저희 집입니다.',
     },
-  ];
-
-  const [comment, setComment] = useState('');
-  const [arrComment, setArrComment] = useState([]);
+  ]);
 
   function commentUpload(e) {
+    e.preventDefault();
     if (comment !== '') {
-      arrComment.push(comment);
-      setArrComment(arrComment);
-      setComment('');
+      setCommentList(
+        commentList.concat({
+          id: commentList.length,
+          name: 'kangho_yoo',
+          text: comment,
+        })
+      );
     }
-
-    // setArrComment(...arrComment, (e.text = e.target.value));
+    setComment('');
   }
 
   function commentInput(e) {
     setComment(e.target.value);
   }
-
-  const enter = e => {
-    if (e.key == 'enter') {
-      commentUpload(e);
-      console.log('hi');
-    } else {
-      console.log('안됌');
-    }
-  };
 
   return (
     <main className="main">
@@ -83,17 +77,10 @@ export default function Main() {
             </span>
           </div>
           <div className="comments">
-            {commentValue.map(el => {
+            {commentList.map(el => {
               return (
                 <li className="mentsWrap">
                   <span className="commentId">{el.name}</span> {el.text}
-                </li>
-              );
-            })}
-            {arrComment.map((el, Index) => {
-              return (
-                <li className="mentsWrap">
-                  <span className="commentId">Kangho_Yoo</span> {el}
                 </li>
               );
             })}
@@ -103,14 +90,13 @@ export default function Main() {
             <p className="mentTime">42분 전</p>
           </div>
 
-          <div className="input">
+          <form className="input">
             <input
               type="text"
               className="commentInput"
               value={comment}
               onChange={commentInput}
               placeholder="댓글 달기..."
-              onProgress={enter}
             />
             <input
               type="button"
@@ -118,7 +104,7 @@ export default function Main() {
               onClick={commentUpload}
               value="게시"
             />
-          </div>
+          </form>
         </article>
       </div>
     </main>

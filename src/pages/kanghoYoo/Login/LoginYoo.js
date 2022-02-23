@@ -57,34 +57,36 @@ function LoginYoo() {
     <div className="login-js">
       <main className="wrapClass">
         <span className="lobsterFont">Westagram</span>
-        <div className="inputBox">
-          <input
-            onChange={handleIdInput}
-            type="text"
-            className="inputId"
-            placeholder="전화번호, 사용자 이름 또는 이메일"
-            onKeyUp={handleKeyUp}
-            value={id}
-          />
-          <input
-            onChange={handlePwInput}
-            type="password"
-            className="inputPw"
-            placeholder="비밀번호"
-            onKeyUp={handleKeyUp}
-            value={pw}
-          />
-        </div>
-        <div className="btnBox">
-          <button
-            className="loginBtn"
-            name="button"
-            onClick={goToMain}
-            disabled={active}
-          >
-            로그인
-          </button>
-        </div>
+        <form>
+          <div className="inputBox">
+            <input
+              onChange={handleIdInput}
+              type="text"
+              className="inputId"
+              placeholder="전화번호, 사용자 이름 또는 이메일"
+              onKeyUp={handleKeyUp}
+              value={id}
+            />
+            <input
+              onChange={handlePwInput}
+              type="password"
+              className="inputPw"
+              placeholder="비밀번호"
+              onKeyUp={handleKeyUp}
+              value={pw}
+            />
+          </div>
+          <div className="btnBox">
+            <button
+              className="loginBtn"
+              name="button"
+              onClick={goToMain}
+              disabled={active}
+            >
+              로그인
+            </button>
+          </div>
+        </form>
         <div className="link">
           <Link to="/login-yoo">비밀번호를 잊으셨나요?</Link>
         </div>
