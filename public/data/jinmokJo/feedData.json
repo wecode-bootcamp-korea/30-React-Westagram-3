@@ -1,0 +1,80 @@
+[
+  {
+    "id": 2,
+    "userName": "lizyOne",
+    "userNickname": "lizy",
+    "profileImg": "https://ca.slack-edge.com/TH0U6FBTN-U02M9TDNZ2P-62c65675f57e-512",
+    "isLiked": true,
+    "likedCount": 8,
+    "content": "오늘 하루도 고생하신 여러분들 💁🏻‍♀️\n귀여운 흰 식빵 2개를 선물로 드립니다..!",
+    "imageUrl": "/images/jinmokJo/jiwonPuppies.jpg",
+    "comments": [
+      {
+        "id": 1,
+        "userName": "jo_jinmok",
+        "content": "우아!! 진~짜 귀엽다🤭🤭🤭 이런게 또 힐링이 되네요😆",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "gwangil",
+        "content": "허거덕 너무 귀여워요!!!",
+        "isLiked": true
+      },
+      {
+        "id": 3,
+        "userName": "gunhee",
+        "content": "코 한 번만 만지고 싶내여 건포도 같아여",
+        "isLiked": true
+      },
+      {
+        "id": 4,
+        "userName": "garam",
+        "content": "미쳐따 미쳐따 저렇게 귀여운 아이들을 뿌리치고 위코드에 오시는 지원님 존경합니다ㅜㅜㅜㅜㅜ넘커엽다",
+        "isLiked": true
+      },
+      {
+        "id": 5,
+        "userName": "xeexoolee",
+        "content": "ㅜㅜ 예쁘다 아가들",
+        "isLiked": true
+      },
+      {
+        "id": 6,
+        "userName": "kwangmin",
+        "content": "아 지원님 아까 말씀드린곳 상호명이 닭내장집이에요ㅋㅋ 근데 보니까 dmc쪽이 아니고 가좌역쪽이네요ㅋㅋ",
+        "isLiked": true
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "userName": "wecode_bootcamp",
+    "userNickname": "WeCoed - 위코드",
+    "profileImg": "https://media.vlpt.us/images/inyong_pang/post/f0ea605d-c2d9-460c-aedc-a0ec77e6759f/wecode.png",
+    "isLiked": false,
+    "likedCount": 4,
+    "content": "\"위코드는 단순 교육업체가 아닌 개발자 커뮤니티입니다. Wecode에서 배우고 저는 총 5개 회사에서 오퍼를 받았습니다.\" - Wecode 졸업생 김병진님 인터뷰 -",
+    "imageUrl": "https://images.unsplash.com/photo-1640622842523-4825918c4716?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+    "comments": [
+      {
+        "id": 1,
+        "userName": "wecode",
+        "content": "Welcome to world best coding bootcamp!",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "joonsikyang",
+        "content": "Hi there.",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "jayPark",
+        "content": "Hey.",
+        "isLiked": false
+      }
+    ]
+  }
+]

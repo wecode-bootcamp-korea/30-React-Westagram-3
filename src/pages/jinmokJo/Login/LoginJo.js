@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import LoginInput from './Components/LoginInput';
@@ -27,14 +27,47 @@ function LoginJo() {
     }
   };
 
+  // useEffect(
+  //   () =>
+  //     fetch('http://192.168.121.151:8000/users/signup', {
+  //       method: 'POST',
+  //       body: JSON.stringify({
+  //         first_name: 'test',
+  //         last_name: 'test',
+  //         username: 'test',
+  //         email: 'test456@test.com',
+  //         password: '123456!ab',
+  //         contact: '010-1244-1242',
+  //       }),
+  //     })
+  //       .then(response => response.json())
+  //       .then(result => console.log('결과: ', result)),
+  //   []
+  // );
+
   const goToMain = e => {
     e.preventDefault();
-    if (loginValid) {
-      navigate('/main-jo');
-    } else {
-      alert('가입된 회원이 아닙니다. 회원가입을 먼저 해주세요.');
-      navigate('/signup-jo');
-    }
+    fetch('http://10.58.6.42:8000/users/login', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: inputValue.userId,
+        password: inputValue.password,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => {
+        if (result.message === 'SUCCESS') {
+          navigate('/main-jo');
+        } else {
+          alert('가입된 회원이 아닙니다. 회원가입을 먼저 해주세요.');
+        }
+      });
+    // if (loginValid) {
+    //   navigate('/main-jo');
+    // } else {
+    //   alert('가입된 회원이 아닙니다. 회원가입을 먼저 해주세요.');
+    //   navigate('/signup-jo');
+    // }
   };
 
   return (

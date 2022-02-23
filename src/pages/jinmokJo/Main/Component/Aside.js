@@ -7,10 +7,10 @@ function Aside() {
         <div className="profiles-header">
           <div className="profiles aside_my_id_profile">
             <a href="#" className="profile-img">
-              <span>&gt;wecode</span>
+              <img src="https://media.vlpt.us/images/inyong_pang/post/f0ea605d-c2d9-460c-aedc-a0ec77e6759f/wecode.png" />
             </a>
             <div className="id_text">
-              <span className="bold_700">wecode_bootcamp</span>
+              <span className="bold_600">wecode_bootcamp</span>
               <span>WeCode - 위코드</span>
             </div>
           </div>
@@ -18,7 +18,7 @@ function Aside() {
         </div>
         <div id="story">
           <div className="aside-header">
-            <span className="aside-title bold_700">스토리</span>
+            <span className="aside-title bold_600">스토리</span>
             <button className="aside-btns">모두 보기</button>
           </div>
           <div className="storys">
@@ -30,7 +30,7 @@ function Aside() {
                 />
               </a>
               <div className="id_text">
-                <span className="bold_700">alexishyuni</span>
+                <span className="bold_600">alexishyuni</span>
                 <span>2시간 전</span>
               </div>
             </div>
@@ -42,7 +42,7 @@ function Aside() {
                 />
               </a>
               <div className="id_text">
-                <span className="bold_700">jminkeek</span>
+                <span className="bold_600">jminkeek</span>
                 <span>1시간 전</span>
               </div>
             </div>
@@ -54,7 +54,7 @@ function Aside() {
                 />
               </a>
               <div className="id_text">
-                <span className="bold_700">drink_eat_drink</span>
+                <span className="bold_600">drink_eat_drink</span>
                 <span>13분 전</span>
               </div>
             </div>
@@ -66,7 +66,7 @@ function Aside() {
                 />
               </a>
               <div className="id_text">
-                <span className="bold_700">beeb_ssunie</span>
+                <span className="bold_600">beeb_ssunie</span>
                 <span>6시간 전</span>
               </div>
             </div>
@@ -74,7 +74,7 @@ function Aside() {
         </div>
         <div id="recommand-section">
           <div className="aside-header">
-            <span className="aside-title bold_700">회원님을 위한 추천</span>
+            <span className="aside-title bold_600">회원님을 위한 추천</span>
             <button className="aside-btns">모두 보기</button>
           </div>
           <div className="recommands">
@@ -87,7 +87,7 @@ function Aside() {
                   />
                 </a>
                 <div className="id_text">
-                  <span className="bold_700">bowerbird_sym</span>
+                  <span className="bold_600">bowerbird_sym</span>
                   <span>회원님을 팔로우합니다</span>
                 </div>
               </div>
@@ -102,7 +102,7 @@ function Aside() {
                   />
                 </a>
                 <div className="id_text">
-                  <span className="bold_700">baekyounghee89</span>
+                  <span className="bold_600">baekyounghee89</span>
                   <span>회원님을 팔로우합니다</span>
                 </div>
               </div>
@@ -117,7 +117,7 @@ function Aside() {
                   />
                 </a>
                 <div className="id_text">
-                  <span className="bold_700">smileday.wj</span>
+                  <span className="bold_600">smileday.wj</span>
                   <span>회원님을 팔로우합니다</span>
                 </div>
               </div>
@@ -125,7 +125,7 @@ function Aside() {
             </div>
           </div>
         </div>
-        <div id="aside_bottom" className="bold_700">
+        <div id="aside_bottom" className="bold_600">
           <nav id="aside_bottom_nav">
             <ul>
               <li>
