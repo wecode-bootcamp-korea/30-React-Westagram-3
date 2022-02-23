@@ -6,7 +6,6 @@ function Article(props) {
   const [inputValue, setInputValue] = useState();
   const [newComments, setNewComments] = useState([]);
   const [commentsData, setCommentsData] = useState([]);
-  const input = useRef();
 
   useEffect(() => {
     fetch('http://localhost:3000/data/seulgiJun/commentData.json', {
@@ -25,7 +24,8 @@ function Article(props) {
   const addComment = event => {
     event.preventDefault();
     setNewComments([...newComments, inputValue]);
-    input.current.value = '';
+    event.target.reset();
+    setInputValue('');
   };
 
   return (
@@ -109,14 +109,16 @@ function Article(props) {
         </p>
       </div>
 
-      <form className="feedColumn">
+      <form onSubmit={addComment} className="feedColumn">
         <input
           onChange={getComment}
-          ref={input}
           className="comment"
           placeholder="댓글 달기..."
         />
-        <button onClick={addComment} className="postButton">
+        <button
+          disabled={!inputValue}
+          className={`postButton${inputValue ? ' activeButton' : ' '}`}
+        >
           게시
         </button>
       </form>

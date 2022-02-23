@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import './LoginJun.scss';
@@ -6,8 +6,23 @@ import './LoginJun.scss';
 function LoginJun() {
   const navigator = useNavigate();
   const [inputValue, setInputValue] = useState({ id: '', password: '' });
+  const isValid =
+    inputValue['id'].includes('@') && inputValue['password'].length >= 5;
 
-  const goToMain = () => {
+  const signReqest = event => {
+    event.preventDefault();
+    fetch('http://172.23.59.236:8080/users/signup', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: inputValue.id,
+        password: inputValue.password,
+      }),
+    })
+      .then(res => res.json())
+      .then(result => {
+        console.log(result.token);
+        localStorage.setItem(result.token);
+      });
     navigator('/main-jun');
   };
 
@@ -33,13 +48,9 @@ function LoginJun() {
             placeholder="비밀번호"
           />
           <button
-            className={
-              inputValue['id'].includes('@') &&
-              inputValue['password'].length >= 5
-                ? 'activeBtn'
-                : 'inactiveBtn'
-            }
-            onClick={goToMain}
+            className={isValid ? 'activeBtn' : 'inactiveBtn'}
+            disabled={!isValid}
+            onClick={signReqest}
           >
             로그인
           </button>

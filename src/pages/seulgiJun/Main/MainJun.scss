@@ -47,10 +47,14 @@ body {
             outline: none;
           }
 
-          button {
+          .postButton {
             all: unset;
             font-size: 14px;
             color: $inactiveColor;
+          }
+
+          .activeButton {
+            color: $activeColor;
           }
         }
 
