@@ -1,0 +1,317 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixin.scss';
+@import '../../../styles/common.scss';
+
+/* nav Start */
+.mainPage {
+  main {
+    position: absolute;
+    margin-top: 90px;
+    left: 50%;
+    transform: translateX(
+      calc((($mainAsideWidth + $mainFeedWidth) / 2) * (-1))
+    );
+    margin-top: 90px;
+    display: flex;
+    flex-direction: column;
+
+    article {
+      border: $themeBorder;
+      width: $mainFeedWidth;
+      background-color: white;
+      margin-bottom: 30px;
+
+      /* feed Top */
+      .feed-nav {
+        width: 100%;
+        min-width: 615px;
+        padding: 10px 16px;
+        height: 68px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .user {
+          width: 100%;
+          display: flex;
+          align-items: center;
+
+          img {
+            width: 8%;
+            margin-right: 18px;
+            border-radius: 100%;
+            border: $themeBorder;
+          }
+        }
+
+        .more {
+          img {
+            width: 24px;
+          }
+        }
+      }
+      /* feed Middle */
+      .feed-image {
+        width: 100%;
+        height: 600px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      /* feed Bottom */
+      .feed-bottom {
+        padding: 14px 14px 8px 14px;
+
+        p {
+          font-size: 14px;
+        }
+
+        .interactiveicon {
+          display: flex;
+          justify-content: space-between;
+
+          i {
+            font-size: 24px;
+            color: $fontSubColor;
+          }
+
+          img {
+            width: 4%;
+          }
+
+          .icon-left {
+            img {
+              margin-right: 10px;
+            }
+
+            i {
+              margin-right: 8px;
+            }
+          }
+        }
+
+        .feedlike {
+          width: 100%;
+          margin-top: 10px;
+          display: flex;
+          align-items: center;
+
+          .likeimage {
+            width: 5%;
+            margin-right: 8px;
+          }
+
+          img {
+            width: 100%;
+            object-fit: cover;
+            border-radius: 100%;
+            border: $themeBorder;
+          }
+
+          span {
+            font-weight: bold;
+          }
+        }
+
+        .comment-start {
+          p {
+            margin-bottom: 5px;
+          }
+
+          .comment {
+            display: flex;
+            justify-content: space-between;
+
+            :first-child {
+              display: flex;
+            }
+
+            i {
+              font-size: 15px;
+            }
+
+            .nickname {
+              font-weight: bold;
+              margin: 0;
+            }
+
+            span {
+              padding-left: 8px;
+              font-size: 14px;
+            }
+          }
+        }
+
+        .seemore {
+          font-size: 14px;
+          color: lightgray;
+        }
+
+        .aftertime {
+          margin-top: 5px;
+          color: lightgray;
+          font-weight: bold;
+        }
+      }
+
+      form {
+        width: 100%;
+        height: 50px;
+        border-top: 1px solid #e7e7e7;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+
+        input {
+          border: none;
+          width: 80%;
+          height: 20px;
+          font-size: 14px;
+          padding: 13px 14px;
+
+          #comment:focus {
+            outline-style: none;
+          }
+        }
+        .gocomment {
+          all: unset;
+          padding-right: 14px;
+          color: #0095f6;
+          font-weight: bold;
+          text-decoration: none;
+
+          &:disabled {
+            opacity: 0.3;
+            cursor: default;
+          }
+        }
+      }
+    }
+  }
+  .aside {
+    position: fixed;
+    left: 50%;
+    top: 90px;
+    transform: translateX(calc(($mainFeedWidth - $mainAsideWidth) / 2));
+    width: $mainAsideWidth;
+
+    .main-right {
+      padding-left: 30px;
+
+      .myproflie {
+        min-width: 345px;
+        width: 100%;
+        height: 60px;
+        display: flex;
+        padding-left: 5px;
+        align-items: center;
+
+        .myimage img {
+          border-radius: 50%;
+          width: 50px;
+          height: 50px;
+          object-fit: fill;
+          margin-right: 10px;
+        }
+        .myname {
+          h2 {
+            font-size: 18px;
+          }
+          p {
+            color: gray;
+          }
+        }
+      }
+
+      .story {
+        width: 100%;
+        background-color: antiquewhite;
+        height: 230px;
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+
+      .recommend {
+        height: 204px;
+        overflow-y: hidden;
+
+        .follow {
+          position: absolute;
+          right: 0%;
+          top: 55%;
+          color: #0095f6;
+          font-weight: bold;
+        }
+      }
+
+      .right-box {
+        width: 100%;
+        margin-top: 14px;
+        padding: 14px;
+        border: 1px solid #e7e7e7;
+        background-color: white;
+        border-radius: 5px;
+      }
+
+      .box-title {
+        font-size: 14px;
+        display: flex;
+        justify-content: space-between;
+
+        p {
+          margin: 0;
+        }
+
+        :first-child {
+          color: gray;
+        }
+
+        :nth-child(2) {
+          font-weight: bold;
+        }
+      }
+
+      .aside-box {
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 14px 0 0 4px;
+
+        div {
+          margin-left: 10px;
+          font-size: 13px;
+        }
+
+        h3 {
+          margin: 12px 0 2px 0;
+        }
+
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+        }
+        p {
+          margin: 0;
+          font-size: 12px;
+        }
+      }
+      /* footer */
+      .footer {
+        margin-top: 14px;
+        font-size: 15px;
+        color: gray;
+        line-height: 1.13;
+      }
+    }
+  }
+}
