@@ -17,6 +17,18 @@ function LoginYoo() {
 
   const navigate = useNavigate();
   const goToMain = () => {
+    fetch('http://10.58.57.210:8000/users/signup', {
+      method: 'POST',
+      body: JSON.stringify({
+        name: 'kangho',
+        email: id,
+        password: pw,
+        phone_number: '01023122312',
+      }),
+    })
+      .then(response => response.json())
+      .then(result => console.log('결과: ', result));
+
     navigate('/main-Yoo');
   };
 
