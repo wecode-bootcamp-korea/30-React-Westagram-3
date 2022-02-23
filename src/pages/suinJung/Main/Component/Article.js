@@ -23,17 +23,20 @@ function Article({ name }) {
       <div className="feed-nav">
         <div className="user">
           <img
-            alt="more"
+            alt="user_image"
             src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80\\"
           />
           <h3>{name}</h3>
         </div>
         <div className="more">
-          <img src="../../images/suinJung/more.png" />
+          <img alt="more" src="../../images/suinJung/more.png" />
         </div>
       </div>
       <div className="feed-image">
-        <img src="https://images.unsplash.com/photo-1616738227115-954748f35c61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" />
+        <img
+          alt="feed_image"
+          src="https://images.unsplash.com/photo-1616738227115-954748f35c61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+        />
       </div>
       <div className="feed-bottom">
         <div className="interactiveicon">
@@ -46,7 +49,7 @@ function Article({ name }) {
         </div>
         <div className="feedlike">
           <div className="likeimage">
-            <img src="../../images/suinJung/face.png" />
+            <img alt="my_image" src="../../images/suinJung/face.png" />
           </div>
           <p>
             <span>aineworld</span>님 <span>외 10명</span>이 좋아합니다.

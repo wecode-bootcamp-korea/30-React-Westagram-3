@@ -16,15 +16,10 @@ function CommentList(props) {
 
   return (
     <div>
-      {commentList.map(comment => {
-        return (
-          <Comment
-            key={comment.id}
-            name={comment.userName}
-            comment={comment.content}
-          />
-        );
+      {commentList.map(el => {
+        return <Comment key={el.id} name={el.userName} comment={el.content} />;
       })}
+
       {props.text.map((el, index) => {
         return <Comment key={index} name="jung" comment={el} />;
       })}

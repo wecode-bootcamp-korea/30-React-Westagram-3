@@ -3,23 +3,33 @@ import { useNavigate } from 'react-router-dom';
 import { useState, useRef } from 'react';
 import './LoginJung.scss';
 import '../../../styles/common.scss';
-import { type } from '@testing-library/user-event/dist/type';
 
 function LoginJung() {
+  const [values, setValues] = useState({ email: '', password: '' });
   const navigate = useNavigate();
 
   const goToMain = () => {
+    // fetch('http://10.58.5.208:8000/users/signup', {
+    //   method: 'POST',
+    //   body: JSON.stringify({
+    //     email: values.email,
+    //     password: values.password,
+    //     phone_number: '01092079004',
+    //     first_name: 'jung',
+    //     last_name: 'suin',
+    //   }),
+    // })
+    //   .then(response => response.json())
+    //   .then(result => console.log('결과: ', result));
     navigate('/main-jung');
   };
-
-  const [values, setValues] = useState({ Id: '', Password: '' });
 
   const handleInput = e => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
   };
 
-  const handleBtn = !(values.Id.includes('@') && values.Password.length > 4);
+  const handleBtn = !(values.email.includes('@') && values.password.length > 4);
 
   const pwInput = useRef();
 
@@ -28,6 +38,7 @@ function LoginJung() {
       pwInput.current.focus();
     }
   };
+
   return (
     <>
       <div className="login">
@@ -36,8 +47,8 @@ function LoginJung() {
           <div className="loginText">
             <form>
               <input
-                name="Id"
-                value={values.Id}
+                name="email"
+                value={values.email}
                 className="inputBox"
                 type="text"
                 placeholder="전화번호, 사용자 이름 또는 이메일"
@@ -46,8 +57,8 @@ function LoginJung() {
                 autoFocus
               />
               <input
-                name="Password"
-                value={values.Password}
+                name="password"
+                value={values.password}
                 className="inputBox"
                 type="password"
                 placeholder="비밀번호"
@@ -56,6 +67,7 @@ function LoginJung() {
               />
               <button
                 name="data"
+                type="button"
                 className="log-btn"
                 disabled={handleBtn}
                 onClick={goToMain}
