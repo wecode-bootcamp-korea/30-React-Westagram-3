@@ -96,7 +96,7 @@ export default function Main() {
             <p className="mentTime">42분 전</p>
           </div>
 
-          <form className="input">
+          <form className="input" onSubmit={commentUpload}>
             <input
               type="text"
               className="commentInput"
