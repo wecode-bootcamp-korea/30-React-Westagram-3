@@ -44,7 +44,6 @@ function LoginYoo() {
 
   function isEnterKey(e) {
     if (e.key === 'Enter') {
-      console.log('확인');
       goToMain();
     }
   }

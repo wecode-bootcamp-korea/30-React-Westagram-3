@@ -47,7 +47,7 @@ export default function Main() {
           <div className="articleTop">
             <div className="account">
               <div>
-                <img src="./profile.png" className="profile" />
+                <img src="/images/kanghoYoo/profile.png" className="profile" />
               </div>
               <div className="name">
                 <span>Kangho_Yoo</span>
