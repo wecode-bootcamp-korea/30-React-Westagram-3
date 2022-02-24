@@ -112,9 +112,9 @@
       .mentsWrap {
         width: $mainFeedWidth;
         list-style: none;
-        padding-left: 20px;
+        margin: 5px 0px;
+        padding: 0px 10px 0px 20px;
         font-size: 14px;
-        margin-bottom: 4px;
 
         .commentId {
           font-weight: bold;
@@ -124,7 +124,7 @@
     }
 
     .mentTime {
-      margin-bottom: 5px;
+      margin: 5px 0px;
       padding-left: 20px;
       font-weight: bold;
       color: rgb(197, 197, 197);

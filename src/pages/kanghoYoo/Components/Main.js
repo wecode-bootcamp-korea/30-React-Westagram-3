@@ -1,11 +1,12 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import Comment from './Comment.js';
 
 export default function Main() {
   const [comment, setComment] = useState('');
   const [commentList, setCommentList] = useState([
-    { id: 1, name: 'vertex7785', text: '시간이 되게 빠르게 지나가네...' },
+    { key: 1, name: 'vertex7785', text: '시간이 되게 빠르게 지나가네...' },
     {
-      id: 2,
+      key: 2,
       name: 'coke_0kal',
       text: '저기 오른쪽으로 가시면 극장이 있죠. 극장에서 쭉 가시면 시장이 나옵니다. 시장에서 왼쪽으로 돌면 편의점, 편의점 건녀편에 이발소, 이발소 옆 골목으로 들어가서 오른쪽 첫번째 집이 저희 집입니다.',
     },
@@ -16,7 +17,7 @@ export default function Main() {
     if (comment !== '') {
       setCommentList(
         commentList.concat({
-          id: commentList.length,
+          key: commentList.length,
           name: 'kangho_yoo',
           text: comment,
         })
@@ -28,6 +29,16 @@ export default function Main() {
   function commentInput(e) {
     setComment(e.target.value);
   }
+
+  useEffect(() => {
+    fetch('/data/dataYoo/commentData.json', {
+      method: 'GET', // GET method는 기본값이라서 생략이 가능합니다.
+    }) // 예시코드에서는 이해를 돕기 위해 명시적으로 기입해뒀습니다.
+      .then(res => res.json())
+      .then(data => {
+        setCommentList(data);
+      });
+  }, []);
 
   return (
     <main className="main">
@@ -78,14 +89,9 @@ export default function Main() {
           </div>
           <div className="comments">
             {commentList.map(el => {
-              return (
-                <li className="mentsWrap">
-                  <span className="commentId">{el.name}</span> {el.text}
-                </li>
-              );
+              return <Comment key={el.key} name={el.name} text={el.text} />;
             })}
           </div>
-          <div className="comments" />
           <div>
             <p className="mentTime">42분 전</p>
           </div>

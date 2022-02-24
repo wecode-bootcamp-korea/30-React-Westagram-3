@@ -16,7 +16,8 @@ function LoginYoo() {
   }
 
   const navigate = useNavigate();
-  const goToMain = () => {
+  const goToMain = e => {
+    e.preventDefault();
     fetch('http://10.58.57.210:8000/users/signup', {
       method: 'POST',
       body: JSON.stringify({
@@ -27,23 +28,30 @@ function LoginYoo() {
       }),
     })
       .then(response => response.json())
-      .then(result => console.log('결과: ', result));
-
-    navigate('/main-Yoo');
+      .then(result => (result.token ? navigate('/main-Yoo') : null));
   };
 
-  const btColor = document.getElementsByClassName('loginBtn')[0];
+  const [chaneColor, setChangeColor] = useState({
+    backgroundColor: 'rgb(176, 213, 255)',
+  });
+
   function ableColor(e) {
-    btColor.style.backgroundColor = 'rgb(0, 150, 250)';
+    setChangeColor({ backgroundColor: 'rgb(0, 150, 250)' });
     setActive(false);
 
+    isEnterKey(e);
+  }
+
+  function isEnterKey(e) {
     if (e.key === 'Enter') {
+      console.log('확인');
       goToMain();
     }
   }
+
   function disableColor() {
-    btColor.style.backgroundColor = 'rgb(176, 213, 255)';
     setActive(true);
+    setChangeColor({ backgroundColor: 'rgb(176, 213, 255)' });
   }
 
   const [active, setActive] = useState(true);
@@ -57,14 +65,13 @@ function LoginYoo() {
     <div className="login-js">
       <main className="wrapClass">
         <span className="lobsterFont">Westagram</span>
-        <form>
+        <form onSubmit={isEnterKey} onKeyUp={handleKeyUp}>
           <div className="inputBox">
             <input
               onChange={handleIdInput}
               type="text"
               className="inputId"
               placeholder="전화번호, 사용자 이름 또는 이메일"
-              onKeyUp={handleKeyUp}
               value={id}
             />
             <input
@@ -72,16 +79,17 @@ function LoginYoo() {
               type="password"
               className="inputPw"
               placeholder="비밀번호"
-              onKeyUp={handleKeyUp}
               value={pw}
             />
           </div>
           <div className="btnBox">
             <button
               className="loginBtn"
+              type="button"
               name="button"
               onClick={goToMain}
               disabled={active}
+              style={chaneColor}
             >
               로그인
             </button>
