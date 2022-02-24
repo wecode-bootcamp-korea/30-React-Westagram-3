@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import Comment from './Comment';
+import Button from './Button';
 
 function Feeds({
   name,
@@ -67,50 +68,42 @@ function Feeds({
   return (
     <article className="feedArticle">
       <div className="articleHeader">
-        <div className="profiles feeds_my_id">
-          <a href="#" className="profile-img">
+        <div className="profiles feedsMyId">
+          <a href="#" className="profileImg">
             <img src={profileImg} />
           </a>
-          <div className="id_text">
-            <span className="bold_600">{name}</span>
+          <div className="idText">
+            <span className="bold600">{name}</span>
             <span className="subFont">{nickname}</span>
           </div>
         </div>
-        <a className="article-header-menu" href="#">
-          <i className="fas fa-ellipsis-h"></i>
+        <a className="articleHeaderMenu" href="#">
+          <i className="fas fa-ellipsis-h" />
         </a>
       </div>
       <div className="contents">
         <img className="contentImg" src={contentImg} />
       </div>
-      <div className="article-bottom">
-        <div className="article-btns">
+      <div className="articleBottom">
+        <div className="articleBtns">
           <div>
-            <button className="heartButton hover" onClick={console.log()}>
-              <i className="far fa-heart"></i>
-            </button>
-            <button className="hover">
-              <i className="far fa-comment"></i>
-            </button>
-            <button className="hover">
-              <i className="fas fa-share-square"></i>
-            </button>
+            <Button name="heartButton" />
+            <Button name="commentButton" />
+            <Button name="shareButton" />
           </div>
           <div>
-            <button className="bookmarkButton hover" onClick={console.log()}>
-              <i className="far fa-bookmark"></i>
-            </button>
+            <Button name="bookmarkButton" />
           </div>
         </div>
-        <div className="like-section">
-          <div className="like-profile"></div>
+        <div className="likeSection">
+          <div className="likeProfile"></div>
           <span>
-            <span className="like-representive bold_600">seungyoun_iain</span>님
-            외 <span className="like-people bold_600">{likeCount}명</span>이
+            <span className="likeRepresentative bold600">seungyoun_iain</span>님
+            외 <span className="likePeople bold600">{likeCount}명</span>이
             좋아합니다
           </span>
         </div>
-        <div className="article-text">
+        <div className="articleText">
           <span>
             <span className="bold">{name}</span>
             {content}
@@ -118,7 +111,7 @@ function Feeds({
         </div>
         <button className="reply">댓글</button>
         <ul className="commentsBox">{updateComments()}</ul>
-        <div className="upload-time">54분 전</div>
+        <div className="uploadTime">54분 전</div>
       </div>
       <div className="comments">
         <form
@@ -128,7 +121,7 @@ function Feeds({
           onSubmit={submitComment}
         >
           <button className="emoji" type="button">
-            <i className="far fa-smile"></i>
+            <i className="far fa-smile" />
           </button>
           <textarea
             name="commentInput"

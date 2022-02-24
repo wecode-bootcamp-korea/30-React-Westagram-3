@@ -1,18 +1,20 @@
 import React from 'react';
+import Button from './Button';
 
 function Comment({ name, comment }) {
   return (
     <li className="commentArea">
       <div className="id_comment">
-        <div className="bold">{name}</div>
+        <div className="commentUser bold600">{name}</div>
         <div className="comment">{comment}</div>
       </div>
-      <button
+      {/* <button
         className="commentHeart heartButton hover"
         // onClick="clickHeartButton(this)"
       >
-        <i className="far fa-heart"></i>
-      </button>
+        <i className="far fa-heart" />
+      </button> */}
+      <Button name="heartButton" />
       <button
         className="deleteButton redHover"
         // onClick="clickDeleteButton(this)"

@@ -18,7 +18,7 @@ a {
   font-weight: 800;
 }
 
-.bold_600 {
+.bold600 {
   font-weight: 600;
 }
 
@@ -54,7 +54,7 @@ a {
 
     .feedArticle {
       width: 615px;
-      border: 1.5px solid #bdbfc1;
+      border: $themeBorder;
     }
 
     .feedArticle:not(:first-child) {
@@ -72,7 +72,7 @@ a {
     @include flexBox(start, center);
   }
 
-  .profile-img {
+  .profileImg {
     @include flexBox(center, center);
     color: white;
     background-color: black;
@@ -86,37 +86,37 @@ a {
     }
   }
 
-  .id_text {
+  .idText {
     @include flexBox(start, start, column);
   }
 
-  .article-header-menu {
-    color: black;
+  .articleHeaderMenu {
+    color: $fontMainColor;
   }
 
-  .feeds_my_id .profile-img {
+  .feedsMyId .profileImg {
     width: 40px;
     height: 40px;
     font-size: 3px;
   }
 
-  .feeds_my_id .id_text {
+  .feedsMyId .idText {
     margin-left: 13px;
   }
 
-  .feeds_my_id .id_text span:first-child {
+  .feedsMyId .idText span:first-child {
     font-size: 13px;
     margin-bottom: 7px;
   }
-  .feeds_my_id .id_text span:last-child {
+  .feedsMyId .idText span:last-child {
     font-size: 11px;
   }
 
   .contents {
     width: 100%;
     // padding-top: 100%;
-    border-top: 1.5px solid #efefef;
-    border-bottom: 1.5px solid #efefef;
+    border-top: $themeBorder;
+    border-bottom: $themeBorder;
     overflow: hidden;
 
     .contentImg {
@@ -126,20 +126,20 @@ a {
     }
   }
 
-  .article-bottom {
+  .articleBottom {
     padding: 15px 15px;
   }
 
-  .article-btns {
+  .articleBtns {
     @include flexBox(space-between, center);
     margin-bottom: 15px;
   }
 
-  .article-btns div button:not(:last-child) {
+  .articleBtns div button:not(:last-child) {
     margin-right: 15px;
   }
 
-  .article-btns div button {
+  .articleBtns div button {
     font-size: 24px;
     cursor: pointer;
   }
@@ -161,16 +161,17 @@ a {
   }
 
   .active {
+    color: $pointColor;
     animation: clickScaleUp 0.2s ease-in-out;
   }
 
-  .like-section {
+  .likeSection {
     @include flexBox(start, center);
     margin-bottom: 15px;
     font-size: 14px;
   }
 
-  .like-profile {
+  .likeProfile {
     margin-right: 5px;
     width: 20px;
     height: 20px;
@@ -180,7 +181,7 @@ a {
     background-position: 0 center;
   }
 
-  .article-text {
+  .articleText {
     line-height: 19px;
     font-size: 14px;
     margin-bottom: 7px;
@@ -201,13 +202,22 @@ a {
   }
 
   .commentArea {
-    @include flexBox(space-between, baseline);
+    @include flexBox(space-between, center);
     position: relative;
     margin-bottom: 10px;
+
+    .commentUser {
+      margin-top: 1px;
+    }
+
+    button {
+      cursor: pointer;
+    }
   }
 
   .id_comment {
     @include flexBox(space-between, baseline);
+    padding-right: 10px;
     flex-grow: 1;
     font-size: 14px;
   }
@@ -223,25 +233,19 @@ a {
     word-break: break-all;
   }
 
-  .commentHeart {
-    padding-left: 10px;
-    align-self: center;
-    cursor: pointer;
-  }
-
   .deleteButton {
     position: absolute;
     left: -11px;
-    top: -1.5px;
+    top: 50%;
+    transform: translateY(-50%);
     color: #bdbfc1;
-    cursor: pointer;
   }
 
   .redHover:hover {
-    color: #ed4956;
+    color: $pointColor;
   }
 
-  .upload-time {
+  .uploadTime {
     font-size: 10px;
     color: #909090;
   }
@@ -295,7 +299,7 @@ a {
     overflow: auto;
   }
 
-  #story-recommand {
+  #storyRecommend {
     position: fixed;
     width: 345px;
     top: 90px;
@@ -304,30 +308,30 @@ a {
     font-family: $defaultFont;
   }
 
-  .story-recommand-section {
+  .storyRecommendSection {
     padding-left: 30px;
   }
 
-  .profiles-header {
+  .profilesHeader {
     @include flexBox(space-between);
     padding: 20px 0;
   }
 
-  .aside_my_id_profile .profile-img {
+  .asideMyIdProfile .profileImg {
     width: 57px;
     height: 57px;
     font-size: 10px;
   }
 
-  .aside_my_id_profile .id_text {
+  .asideMyIdProfile .idText {
     margin-left: 20px;
   }
 
-  .aside_my_id_profile .id_text span:first-child {
+  .asideMyIdProfile .idText span:first-child {
     font-size: 14px;
     margin-bottom: 7px;
   }
-  .aside_my_id_profile .id_text span:last-child {
+  .asideMyIdProfile .idText span:last-child {
     color: #8e8e8e;
     font-size: 14px;
   }
@@ -350,17 +354,17 @@ a {
     scrollbar-width: none; /* Firefox */
   }
 
-  .aside-header {
+  .asideHeader {
     @include flexBox(space-between, center);
     padding: 15px 0;
   }
 
-  .aside-title {
+  .asideTitle {
     color: #8e8e8e;
     font-size: 14px;
   }
 
-  .aside-btns {
+  .asideBtns {
     padding: 0;
     border: none;
     background-color: unset;
@@ -368,71 +372,71 @@ a {
     font-weight: 600;
   }
 
-  .id-change {
+  .idChange {
     color: #159af6;
   }
 
-  .story-profiles .profile-img {
+  .storyProfiles .profileImg {
     width: 40px;
     height: 40px;
     overflow: hidden;
   }
 
-  .profile-img img {
+  .profileImg img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-  .story-profiles .id_text {
+  .storyProfiles .idText {
     margin-left: 13px;
   }
 
-  .story-profiles .id_text span:first-child {
+  .storyProfiles .idText span:first-child {
     font-size: 14px;
     margin-bottom: 5px;
   }
-  .story-profiles .id_text span:last-child {
+  .storyProfiles .idText span:last-child {
     color: #8e8e8e;
     font-size: 12px;
   }
 
-  .storys .story-profiles:not(:first-child) {
+  .storys .storyProfiles:not(:first-child) {
     margin-top: 15px;
   }
 
-  #recommand-section {
+  #recommendSection {
     margin-bottom: 35px;
   }
 
-  .recommand-profiles .profile-img {
+  .recommendProfiles .profileImg {
     width: 35px;
     height: 35px;
     overflow: hidden;
   }
 
-  .recommand-profiles .id_text {
+  .recommendProfiles .idText {
     margin-left: 13px;
   }
 
-  .recommand-profiles .id_text span:first-child {
+  .recommendProfiles .idText span:first-child {
     font-size: 14px;
     margin-bottom: 5px;
   }
-  .recommand-profiles .id_text span:last-child {
+  .recommendProfiles .idText span:last-child {
     color: #8e8e8e;
     font-size: 12px;
   }
 
-  .recommands .recommand-profile-follow:not(:first-child) {
+  .recommends .recommendProfileFollow:not(:first-child) {
     margin-top: 15px;
   }
 
-  .recommand-profile-follow {
+  .recommendProfileFollow {
     @include flexBox(space-between);
   }
 
-  #aside_bottom {
+  #asideBottom {
     color: #c8c8c8;
     font-size: 11px;
 
@@ -441,21 +445,21 @@ a {
     }
   }
 
-  #aside_bottom_nav {
+  #asideBottomNav {
     margin-bottom: 25px;
   }
 
-  #aside_bottom_nav ul {
+  #asideBottomNav ul {
     display: flex;
     flex-wrap: wrap;
     line-height: 20px;
   }
 
-  #aside_bottom_nav ul a {
+  #asideBottomNav ul a {
     color: #c8c8c8;
   }
 
-  #aside_bottom_nav ul li:not(:last-child)::after {
+  #asideBottomNav ul li:not(:last-child)::after {
     content: '·';
     color: #c8c8c8;
     padding: 0 3px;

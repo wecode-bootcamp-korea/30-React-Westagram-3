@@ -1,6 +1,6 @@
 [
   {
-    "id": 2,
+    "id": 1,
     "userName": "lizyOne",
     "userNickname": "lizy",
     "profileImg": "https://ca.slack-edge.com/TH0U6FBTN-U02M9TDNZ2P-62c65675f57e-512",
@@ -35,7 +35,7 @@
       },
       {
         "id": 5,
-        "userName": "xeexoolee",
+        "userName": "xeexulee",
         "content": "ㅜㅜ 예쁘다 아가들",
         "isLiked": true
       },
@@ -48,7 +48,7 @@
     ]
   },
   {
-    "id": 1,
+    "id": 2,
     "userName": "wecode_bootcamp",
     "userNickname": "WeCoed - 위코드",
     "profileImg": "https://media.vlpt.us/images/inyong_pang/post/f0ea605d-c2d9-460c-aedc-a0ec77e6759f/wecode.png",
