@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 import React from 'react';
 import NavImgLink from './NavImgLink';
 import './Nav.scss';
@@ -8,13 +9,13 @@ function Nav(props) {
       <nav className="navigationMain">
         <div className="navBox">
           <div className="instagramIcon">
-            <i className="fab fa-instagram"></i>
+            <i className="fab fa-instagram" />
             <h1 className="instagramFont">Westagram</h1>
           </div>
           <div className="searchBox">
             <input type="text" name="search" className="search" />
             <span className="searchPlaceholder">
-              <i className="fas fa-search"></i> 검색
+              <i className="fas fa-search" /> 검색
             </span>
           </div>
           <div className="navIcons">

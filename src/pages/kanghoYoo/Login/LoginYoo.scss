@@ -1,0 +1,77 @@
+@import './../../../styles/variables.scss';
+@import './../../../styles/mixin.scss';
+@import '.././styles/variables.scss';
+
+.login {
+  @include flexColumn;
+  justify-content: center;
+  height: 100vh;
+
+  .wrapClass {
+    @include flexColumn;
+    width: 350px;
+    height: 382px;
+    background-color: white;
+    border: $themeBorder;
+
+    span {
+      margin: 30px 0px 50px 0px;
+    }
+
+    .lobsterFont {
+      font-size: 42px;
+      font-weight: 700;
+      font-family: 'Lobster', cursive;
+      cursor: default;
+    }
+
+    .inputBox {
+      @include flexColumn;
+
+      .inputId,
+      .inputPw {
+        width: 258px;
+        height: 36px;
+        margin-bottom: 6px;
+        padding-left: 10px;
+        color: $fontMainColor;
+        border: $themeBorder;
+        border-radius: 2px;
+        font-size: 12px;
+      }
+    }
+
+    .btnBox {
+      padding: 10px 0px 90px 0px;
+
+      .activeLoginBtn {
+        width: 258px;
+        height: 35px;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 15px;
+        font-style: bold;
+        background-color: $activeColor;
+      }
+      .inactiveLoginBtn {
+        width: 258px;
+        height: 35px;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 15px;
+        font-style: bold;
+        background-color: $inactiveColor;
+      }
+    }
+
+    .link {
+      a {
+        color: $fontMainColor;
+        font-size: 12px;
+        text-decoration: none;
+      }
+    }
+  }
+}
