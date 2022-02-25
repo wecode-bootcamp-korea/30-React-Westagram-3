@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "userName": "hello",
+    "userImg": "/images/kanghoYoo/profile.png",
+    "feedImg": "/images/kanghoYoo/profile.png",
+    "commentList": [
+      {
+        "commentId": 1,
+        "name": "firstFeed",
+        "text": "Welcome to world best coding bootcamp!",
+        "isLiked": true
+      },
+      {
+        "commentId": 2,
+        "name": "joonsikyang",
+        "text": "Hi there.",
+        "isLiked": false
+      },
+      {
+        "commentId": 3,
+        "name": "jayPark",
+        "text": "Hey.",
+        "isLiked": false
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "userName": "hellowsss",
+    "userImg": "/images/kanghoYoo/profile.png",
+    "feedImg": "/images/kanghoYoo/profile.png",
+    "commentList": [
+      {
+        "commentId": 1,
+        "name": "itsMe",
+        "text": "Welcome to world best coding bootcamp!",
+        "isLiked": true
+      },
+      {
+        "commentId": 2,
+        "name": "joonsikyang",
+        "text": "Hi there.",
+        "isLiked": false
+      },
+      {
+        "commentId": 3,
+        "name": "jayPark",
+        "text": "Hey.",
+        "isLiked": false
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "userName": "hellowqeqwe",
+    "userImg": "/images/kanghoYoo/profile.png",
+    "feedImg": "/images/kanghoYoo/profile.png",
+    "commentList": [
+      {
+        "commentId": 1,
+        "name": "itsMemario",
+        "text": "Welcome to world best coding bootcamp!",
+        "isLiked": true
+      },
+      {
+        "commentId": 2,
+        "name": "joonsikyang",
+        "text": "Hi there.",
+        "isLiked": false
+      },
+      {
+        "commentId": 3,
+        "name": "jayPark",
+        "text": "Hey.",
+        "isLiked": false
+      }
+    ]
+  }
+]

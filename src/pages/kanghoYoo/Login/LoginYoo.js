@@ -28,43 +28,21 @@ function LoginYoo() {
       }),
     })
       .then(response => response.json())
-      .then(result => (result.token ? navigate('/main-Yoo') : null));
+      .then(result => result.token && navigate('/main-Yoo'));
   };
-
-  const [chaneColor, setChangeColor] = useState({
-    backgroundColor: 'rgb(176, 213, 255)',
-  });
-
-  function ableColor(e) {
-    setChangeColor({ backgroundColor: 'rgb(0, 150, 250)' });
-    setActive(false);
-
-    isEnterKey(e);
-  }
-
-  function isEnterKey(e) {
-    if (e.key === 'Enter') {
-      goToMain();
-    }
-  }
-
-  function disableColor() {
-    setActive(true);
-    setChangeColor({ backgroundColor: 'rgb(176, 213, 255)' });
-  }
 
   const [active, setActive] = useState(true);
   const handleKeyUp = e => {
     id.length > 5 && id.includes('@') && pw.length > 5
-      ? ableColor(e)
-      : disableColor();
+      ? setActive(false) && goToMain(e)
+      : setActive(true);
   };
 
   return (
-    <div className="login-js">
+    <div className="login">
       <main className="wrapClass">
         <span className="lobsterFont">Westagram</span>
-        <form onSubmit={isEnterKey} onKeyUp={handleKeyUp}>
+        <form onSubmit={!active && goToMain} onKeyUp={handleKeyUp}>
           <div className="inputBox">
             <input
               onChange={handleIdInput}
@@ -88,7 +66,6 @@ function LoginYoo() {
               name="button"
               onClick={goToMain}
               disabled={active}
-              style={chaneColor}
             >
               로그인
             </button>

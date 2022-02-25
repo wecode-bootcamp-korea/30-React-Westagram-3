@@ -2,7 +2,7 @@
 @import './../../../styles/mixin.scss';
 @import '.././styles/variables.scss';
 
-.login-js {
+.login {
   @include flexColumn;
   justify-content: center;
   height: 100vh;
@@ -44,7 +44,7 @@
     .btnBox {
       padding: 10px 0px 90px 0px;
 
-      .loginBtn {
+      .loginbtn {
         width: 258px;
         height: 35px;
         color: white;
@@ -52,6 +52,10 @@
         border-radius: 5px;
         font-size: 15px;
         font-style: bold;
+        background-color: $activeColor;
+        :disabled {
+          background-color: $inactiveColor;
+        }
       }
     }
 

@@ -1,17 +1,28 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Comment from './Comment.js';
 
-export default function Main() {
+export default function Feed({
+  id,
+  userName,
+  userImg,
+  feedImg,
+  commentDataList,
+}) {
   const [comment, setComment] = useState('');
-  const [commentList, setCommentList] = useState([
-    { key: 1, name: 'vertex7785', text: '시간이 되게 빠르게 지나가네...' },
-    {
-      key: 2,
-      name: 'coke_0kal',
-      text: '저기 오른쪽으로 가시면 극장이 있죠. 극장에서 쭉 가시면 시장이 나옵니다. 시장에서 왼쪽으로 돌면 편의점, 편의점 건녀편에 이발소, 이발소 옆 골목으로 들어가서 오른쪽 첫번째 집이 저희 집입니다.',
-    },
-  ]);
-
+  const [commentList, setCommentList] = useState(
+    // {
+    //   commentId: 1,
+    //   name: 'vertex7785',
+    //   text: '시간이 되게 빠르게 지나가네...',
+    // },
+    // {
+    //   commentId: 2,
+    //   name: 'coke_0kal',
+    //   text: '저기 오른쪽으로 가시면 극장이 있죠. 극장에서 쭉 가시면 시장이 나옵니다. 시장에서 왼쪽으로 돌면 편의점, 편의점 건녀편에 이발소, 이발소 옆 골목으로 들어가서 오른쪽 첫번째 집이 저희 집입니다.',
+    // },
+    commentDataList
+  );
+  console.log({ id } + '일까');
   function commentUpload(e) {
     e.preventDefault();
     if (comment !== '') {
@@ -30,27 +41,27 @@ export default function Main() {
     setComment(e.target.value);
   }
 
-  useEffect(() => {
-    fetch('/data/dataYoo/commentData.json', {
-      method: 'GET', // GET method는 기본값이라서 생략이 가능합니다.
-    }) // 예시코드에서는 이해를 돕기 위해 명시적으로 기입해뒀습니다.
-      .then(res => res.json())
-      .then(data => {
-        setCommentList(data);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch('/data/dataYoo/commentData.json', {
+  //     method: 'GET', // GET method는 기본값이라서 생략이 가능합니다.
+  //   }) // 예시코드에서는 이해를 돕기 위해 명시적으로 기입해뒀습니다.
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setCommentList(data);
+  //     });
+  // }, []);
 
   return (
     <main className="main">
-      <div className="feeds">
+      <div className="feeds" key={id}>
         <article className="article">
           <div className="articleTop">
             <div className="account">
               <div>
-                <img src="/images/kanghoYoo/profile.png" className="profile" />
+                <img src={userImg} className="profile" alt="유저이미지" />
               </div>
               <div className="name">
-                <span>Kangho_Yoo</span>
+                <span>{userName}</span>
               </div>
             </div>
             <div>
@@ -58,11 +69,7 @@ export default function Main() {
             </div>
           </div>
           <div>
-            <img
-              src="https://images.unsplash.com/photo-1504297050568-910d24c426d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw0OXx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60"
-              alt="메인 이미지"
-              className="artImg"
-            />
+            <img src={feedImg} alt="메인 이미지" className="artImg" />
           </div>
           <div className="iconsWrap">
             <div className="icons">
@@ -88,8 +95,8 @@ export default function Main() {
             </span>
           </div>
           <div className="comments">
-            {commentList.map(el => {
-              return <Comment key={el.key} name={el.name} text={el.text} />;
+            {commentList.map((el, commentId) => {
+              return <Comment key={commentId} name={el.name} text={el.text} />;
             })}
           </div>
           <div>

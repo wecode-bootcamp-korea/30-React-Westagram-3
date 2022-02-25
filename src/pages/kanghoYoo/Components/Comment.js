@@ -1,7 +1,10 @@
-export default function Comment(props) {
+export default function Comment({ id, name, text }) {
   return (
     <li className="mentsWrap">
-      <span className="commentId">{props.name}</span> <span>{props.text}</span>
+      <span key={id} className="commentId">
+        {name}
+      </span>
+      <span>{text}</span>
     </li>
   );
 }
