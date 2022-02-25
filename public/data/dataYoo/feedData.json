@@ -55,7 +55,7 @@
     "id": 3,
     "userName": "hellowqeqwe",
     "userImg": "/images/kanghoYoo/profile.png",
-    "feedImg": "/images/kanghoYoo/profile.png",
+    "feedImg": "https://images.unsplash.com/photo-1644329901564-1e47f5d1b81a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2OHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60",
     "commentList": [
       {
         "commentId": 1,

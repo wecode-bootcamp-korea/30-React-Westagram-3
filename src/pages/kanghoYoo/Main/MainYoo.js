@@ -22,19 +22,22 @@ function MainYoo() {
   return (
     <>
       <Nav />
-      <div>
-        {feedList.map((el, id) => {
+      <main className="main">
+        {feedList.map((el, i) => {
+          const feed = feedList[i];
           return (
-            <Feed
-              key={id}
-              userName={el.userName}
-              userImg={el.userImg}
-              feedImg={el.feedImg}
-              commentDataList={el.commentList}
-            />
+            <div className="feeds" key={i}>
+              <Feed
+                key={feed.id}
+                userName={feed.userName}
+                userImg={feed.userImg}
+                feedImg={feed.feedImg}
+                commentDataList={feed.commentList}
+              />
+            </div>
           );
         })}
-      </div>
+      </main>
       <div className="mainRight">
         <Aside />
         <Footer />

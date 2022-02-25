@@ -6,16 +6,26 @@ import { useState } from 'react';
 
 function LoginYoo() {
   const [id, setId] = useState('');
-  function handleIdInput(e) {
-    setId(e.target.value);
-  }
-
   const [pw, setPw] = useState('');
-  function handlePwInput(e) {
-    setPw(e.target.value);
+  const [active, setActive] = useState(true);
+  const navigate = useNavigate();
+
+  function handleIdInput(e) {
+    const { value } = e.target;
+    setId(value);
   }
 
-  const navigate = useNavigate();
+  function handlePwInput(e) {
+    const { value } = e.target;
+    setPw(value);
+  }
+
+  const handleKeyUp = e => {
+    id.length > 5 && id.includes('@') && pw.length > 5
+      ? setActive(false)
+      : setActive(true);
+  };
+
   const goToMain = e => {
     e.preventDefault();
     fetch('http://10.58.57.210:8000/users/signup', {
@@ -31,18 +41,11 @@ function LoginYoo() {
       .then(result => result.token && navigate('/main-Yoo'));
   };
 
-  const [active, setActive] = useState(true);
-  const handleKeyUp = e => {
-    id.length > 5 && id.includes('@') && pw.length > 5
-      ? setActive(false) && goToMain(e)
-      : setActive(true);
-  };
-
   return (
     <div className="login">
       <main className="wrapClass">
         <span className="lobsterFont">Westagram</span>
-        <form onSubmit={!active && goToMain} onKeyUp={handleKeyUp}>
+        <form onSubmit={goToMain} onKeyUp={handleKeyUp}>
           <div className="inputBox">
             <input
               onChange={handleIdInput}
@@ -61,7 +64,9 @@ function LoginYoo() {
           </div>
           <div className="btnBox">
             <button
-              className="loginBtn"
+              className={
+                active === true ? 'inactiveLoginBtn' : 'activeLoginBtn'
+              }
               type="button"
               name="button"
               onClick={goToMain}

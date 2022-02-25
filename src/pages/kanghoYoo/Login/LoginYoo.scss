@@ -44,7 +44,7 @@
     .btnBox {
       padding: 10px 0px 90px 0px;
 
-      .loginbtn {
+      .activeLoginBtn {
         width: 258px;
         height: 35px;
         color: white;
@@ -53,9 +53,16 @@
         font-size: 15px;
         font-style: bold;
         background-color: $activeColor;
-        :disabled {
-          background-color: $inactiveColor;
-        }
+      }
+      .inactiveLoginBtn {
+        width: 258px;
+        height: 35px;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 15px;
+        font-style: bold;
+        background-color: $inactiveColor;
       }
     }
 
