@@ -2,18 +2,18 @@ import React from 'react';
 
 import Comment from './Comment';
 
-function CommentList(props) {
+function CommentList({ commentsData, newComments, currentUsername }) {
   return (
     <div className="feedColumnRow comments">
-      {props.commentsData.map(comment => (
+      {commentsData.map(comment => (
         <Comment
           key={comment.id}
           username={comment.userName}
           text={comment.content}
         />
       ))}
-      {props.newComments.map((comment, index) => (
-        <Comment key={index} username={props.currentUsername} text={comment} />
+      {newComments.map((comment, index) => (
+        <Comment key={index} username={currentUsername} text={comment} />
       ))}
     </div>
   );

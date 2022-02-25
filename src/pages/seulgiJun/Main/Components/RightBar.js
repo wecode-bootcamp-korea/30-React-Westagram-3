@@ -3,6 +3,11 @@ import React from 'react';
 import Box from './Box';
 import GrayText from './GrayText';
 
+const ASIDE_DATA = [
+  { id: 1, name: '달님', userId: 'dal_nim', isFollow: 0 },
+  { id: 2, name: '별님', userId: 'byeol_nim', isFollow: 1 },
+];
+
 function RightBar() {
   return (
     <>
@@ -14,10 +19,9 @@ function RightBar() {
             <p className="grayText">햇님 | 고양이</p>
           </div>
         </div>
-
-        <Box name={'달님'} userId={'dal_nim'} isFollow={0} />
-        <Box name={'별님'} userId={'byeol_nim'} isFollow={1} />
-
+        {ASIDE_DATA.map(data => (
+          <Box key={data.id} data={data} />
+        ))}
         <GrayText />
       </div>
     </>

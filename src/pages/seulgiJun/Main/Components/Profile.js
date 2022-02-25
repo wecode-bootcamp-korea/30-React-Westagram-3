@@ -5,21 +5,23 @@ import React from 'react';
 //   return <img alt="{name}이 프사" src="../../../../images/{name}.jpeg" />;
 // }
 
-function Profile({ name, userId, isFollow }) {
+function Profile({ profileData }) {
   return (
     <div className="profileContainer">
       <img
-        className={isFollow === 1 ? 'followList' : ''}
-        alt={`${name}이 프사`}
-        src={`/images/seulgiJun/${name}.jpeg`}
+        className={profileData.isFollow === 1 ? 'followList' : ''}
+        alt={`${profileData.name}이 프사`}
+        src={`/images/seulgiJun/${profileData.name}.jpeg`}
       />
       <div className="profileContainerRow">
-        <p>{userId}</p>
+        <p>{profileData.userId}</p>
         <p className="grayText">
-          {isFollow === 0 ? '10분 전' : 'hae_dal_byeol님 외...'}
+          {profileData.isFollow === 0 ? '10분 전' : 'hae_dal_byeol님 외...'}
         </p>
       </div>
-      <span className={`blueSpan${isFollow === 0 ? ' invisible' : ''}`}>
+      <span
+        className={`blueSpan${profileData.isFollow === 0 ? ' invisible' : ''}`}
+      >
         팔로우
       </span>
     </div>

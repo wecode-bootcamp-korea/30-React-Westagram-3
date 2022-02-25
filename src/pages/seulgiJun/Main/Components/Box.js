@@ -3,14 +3,14 @@ import React from 'react';
 import Label from './Label';
 import Profile from './Profile';
 
-function Box({ name, userId, isFollow }) {
+function Box({ data }) {
   return (
     <div className="boxContainer">
       <Label />
-      <Profile name={name} userId={userId} isFollow={isFollow} />
-      <Profile name={name} userId={userId} isFollow={isFollow} />
-      <Profile name={name} userId={userId} isFollow={isFollow} />
-      <Profile name={name} userId={userId} isFollow={isFollow} />
+      <Profile profileData={data} />
+      <Profile profileData={data} />
+      <Profile profileData={data} />
+      <Profile profileData={data} />
     </div>
   );
 }

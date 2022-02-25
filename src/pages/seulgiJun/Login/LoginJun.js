@@ -3,6 +3,11 @@ import { useNavigate } from 'react-router-dom';
 
 import './LoginJun.scss';
 
+const ERROR_MESSAGE = {
+  INVALID_USER: '존재하지 않는 사용자입니다.',
+  INVALID_PASSWORD: '잘못된 비밀번호입니다.',
+};
+
 function LoginJun() {
   const navigator = useNavigate();
   const [inputValue, setInputValue] = useState({ id: '', password: '' });
@@ -20,8 +25,12 @@ function LoginJun() {
     })
       .then(res => res.json())
       .then(result => {
-        console.log(result.token);
-        localStorage.setItem(result.token);
+        if (result.token) {
+          localStorage.setItem('token', result.token);
+        }
+        if (result.message) {
+          alert(ERROR_MESSAGE[result.message]);
+        }
       });
     navigator('/main-jun');
   };

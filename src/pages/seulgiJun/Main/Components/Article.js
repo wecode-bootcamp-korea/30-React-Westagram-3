@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import CommentList from './CommentList';
 
 function Article(props) {
-  const [inputValue, setInputValue] = useState();
+  const [inputValue, setInputValue] = useState('');
   const [newComments, setNewComments] = useState([]);
   const [commentsData, setCommentsData] = useState([]);
 
@@ -24,7 +24,7 @@ function Article(props) {
   const addComment = event => {
     event.preventDefault();
     setNewComments([...newComments, inputValue]);
-    event.target.reset();
+    // event.target.reset();
     setInputValue('');
   };
 
@@ -111,6 +111,7 @@ function Article(props) {
 
       <form onSubmit={addComment} className="feedColumn">
         <input
+          value={inputValue}
           onChange={getComment}
           className="comment"
           placeholder="댓글 달기..."
