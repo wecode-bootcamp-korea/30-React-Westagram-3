@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import './LoginJun.scss';
@@ -12,7 +12,7 @@ function LoginJun() {
   const navigator = useNavigate();
   const [inputValue, setInputValue] = useState({ id: '', password: '' });
   const isValid =
-    inputValue['id'].includes('@') && inputValue['password'].length >= 5;
+    inputValue.id.includes('@') && inputValue.password.length >= 5;
 
   const signReqest = event => {
     event.preventDefault();
@@ -45,11 +45,7 @@ function LoginJun() {
       <div className="login">
         <h1>Westagram</h1>
         <form className="loginForm">
-          <input
-            name="id"
-            onChange={handleInput}
-            placeholder="전화번호, 사용자 이름 또는 이메일"
-          />
+          <input name="id" onChange={handleInput} placeholder="이메일" />
           <input
             name="password"
             onChange={handleInput}
