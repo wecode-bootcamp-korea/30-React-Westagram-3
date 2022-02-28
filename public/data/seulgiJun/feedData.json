@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "profileImage": "/images/seulgiJun/해달별.jpeg",
+    "userName": "hae_dal_byeol",
+    "image": "/images/seulgiJun/별님.jpeg",
+    "content": "별님이는 아래에서 찍어도 귀여워... ",
+    "countLike": 10,
+    "uploadTime": "42분"
+  },
+  {
+    "id": 2,
+    "profileImage": "/images/seulgiJun/달님.jpeg",
+    "userName": "dal_nim",
+    "image": "/images/seulgiJun/햇님.jpeg",
+    "content": "소파에 앉아있는 햇님이 ",
+    "countLike": 13,
+    "uploadTime": "16시간"
+  },
+  {
+    "id": 3,
+    "profileImage": "/images/seulgiJun/햇님.jpeg",
+    "userName": "hae_nim",
+    "image": "/images/seulgiJun/달님.jpeg",
+    "content": "달님이 하품 중! ",
+    "countLike": 24,
+    "uploadTime": "1일"
+  }
+]
